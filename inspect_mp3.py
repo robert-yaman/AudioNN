@@ -2,8 +2,9 @@ import librosa
 import librosa.display
 import sys
 import matplotlib.pyplot as plt
+import os
 
-audio_path = sys.argv[1]
+audio_path = os.getcwd() + '/'  + sys.argv[1]
 
 time_series, sampling_rate = librosa.load(audio_path)
 
