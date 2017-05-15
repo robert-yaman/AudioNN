@@ -81,15 +81,18 @@ def main_NN(_):
     # fist convoultional layer has 5x5 filters, 1 input  channel (since images
     # are BW), and 32 is output channel (e.g. we'll make 32 channels
     # note we are making variables of this shape
-    W_conv1 = weight_variables([5,5,1,32])
+    W_conv1 = weight_variables([5,5,1,32]) # confused by the order of
+    # idimensions
+    # Notice dimension of bias tensor - bias value is the same for each layer
+    # because the weights in the filter are constant per layer
     b_conv1 = bias_variables([32])
 
     # 1 is number of channels
     x_image = tf.reshape(x, [-1,28,28,1])
-    
+
     h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
     h_pool1 = max_pool_2x2(h_conv1)
-    print("Shape: %s",x.shape)
+
     # second conv layer
     # 32 because our previous conv layer output was depth of 32
     W_conv2 = weight_variables([5,5,32,64])
@@ -104,8 +107,10 @@ def main_NN(_):
     # flatten pool
     h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
     h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-    
+
     #apply dropout
+    # (remember dropout applies to training time. Test time all nodes are
+    # present
     keep_prob = tf.placeholder(tf.float32)
     h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
@@ -137,6 +142,40 @@ def main_NN(_):
         x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
     # result: got almost 1 accuracy after 8,000 iterations, took about 20
     # minutes
+
+
+def main_NN_no_looking(_):
+    def weight_variables(shape):
+        initial = tf.truncated_normal(shape, stddev=.01)
+        return tf.Variable(initial)
+    def bias_variables(shape):
+        initial = tf.constant(0.1, shape=shape)
+        return tf.Variable(initial)
+    def conv_layer(inputs, filter_shape):
+        return tf.layers.conv2d(inputs, filter_shape, strides=[1,1,1,1],
+                padding='same')
+    def pooling_layer(input):
+        return tf.layers.max_pooling2d(inputs, pool_size=[1,2,2,1],
+                strides=[1,2,2,1], padding='same')
+    # inputs
+    # None - corresponds to variable length. Because we don't know how many
+    # data points we'll have ahead of time 
+    x = tf.placholder(tf.float32, [None, 784])
+    y_ = tf.placeholder(tf.float32, [None, 10])
+
+    # -1 because we don't know ahead of time how big it wil be
+    x_image = tf.reshape(x,[-1, 28,28,1])
+    # First conv layer
+    num_filters1 = 32
+    weight_vars1 = weight_variables([1,5,5,1])
+    bias_vars1 = bias_variables([32,]) # each filter, each spot
+
+    conv1 = tf.nn.reul(conv_layer(x_image, weight_vars1) + bias_vars1)
+
+
+
+
+
 
 
 if __name__ == '__main__':
