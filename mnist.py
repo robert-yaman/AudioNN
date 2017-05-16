@@ -62,7 +62,7 @@ def main_NN(_):
         initial = tf.truncated_normal(shape, stddev=0.1)
         return tf.Variable(initial)
     def bias_variables(shape):
-        # initialize biases with slightly positive wegith to avoid "dead
+        # initialize biases tf.nn.with slightly positive wegith to avoid "dead
         # neurons"
         initial = tf.constant(0.1, shape=shape)
         return tf.Variable(initial)
@@ -124,15 +124,21 @@ def main_NN(_):
     sess = tf.InteractiveSession()
     mnist = input_data.read_data_sets(FLAGS.data_dir, one_hot=True)
     sess.run(tf.initialize_all_variables())
+    # just takes the mean of the reduction of the tensro. Here we're reducing
+    # cross entropy across all of the training data
     cross_entropy = tf.reduce_mean(
         tf.nn.softmax_cross_entropy_with_logits(labels=y_, logits=y_conv))
     train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
-    correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(y_,1))
+    # Why take max here? Should never be over 1
+        # A: the second argument is actually the index over which we're getting
+        # the max value.
+    correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(y_,1)) 
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
     sess.run(tf.global_variables_initializer())
     for i in range(20000):
       batch = mnist.train.next_batch(50)
       if i%100 == 0:
+        # this is why keep_prob is a placehodler. 
         train_accuracy = accuracy.eval(feed_dict={
             x:batch[0], y_: batch[1], keep_prob: 1.0})
         print("step %d, training accuracy %g"%(i, train_accuracy))
@@ -152,35 +158,84 @@ def main_NN_no_looking(_):
         initial = tf.constant(0.1, shape=shape)
         return tf.Variable(initial)
     def conv_layer(inputs, filter_shape):
-        return tf.layers.conv2d(inputs, filter_shape, strides=[1,1,1,1],
-                padding='same')
-    def pooling_layer(input):
-        return tf.layers.max_pooling2d(inputs, pool_size=[1,2,2,1],
-                strides=[1,2,2,1], padding='same')
+        return tf.nn.conv2d(inputs, filter_shape, strides=[1,1,1,1],
+                padding='SAME')
+    def pooling_layer(inputs):
+        return tf.nn.max_pool(inputs, ksize=[1,2,2,1],
+                strides=[1,2,2,1], padding='SAME')
     # inputs
     # None - corresponds to variable length. Because we don't know how many
     # data points we'll have ahead of time 
-    x = tf.placholder(tf.float32, [None, 784])
+    x = tf.placeholder(tf.float32, [None, 784])
     y_ = tf.placeholder(tf.float32, [None, 10])
 
     # -1 because we don't know ahead of time how big it wil be
     x_image = tf.reshape(x,[-1, 28,28,1])
     # First conv layer
     num_filters1 = 32
-    weight_vars1 = weight_variables([1,5,5,1])
-    bias_vars1 = bias_variables([32,]) # each filter, each spot
+    # Q: Why is the first dimension 5 when the first dimension of the input is
+    # |data|?
+    # A: This filter applies over the first dimension of the input 
+    weight_vars1 = weight_variables([5,5,1,num_filters1])
+    bias_vars1 = bias_variables([num_filters1])
 
-    conv1 = tf.nn.reul(conv_layer(x_image, weight_vars1) + bias_vars1)
+    conv1 = tf.nn.relu(conv_layer(x_image, weight_vars1) + bias_vars1)
+    pool1 = pooling_layer(conv1)
 
+    num_filters2 = 64
+    weight_vars2 = weight_variables([5,5,num_filters1, num_filters2])
+    bias_vars2 = bias_variables([num_filters2])
 
+    conv2 = tf.nn.relu(conv_layer(pool1, weight_vars2) + bias_vars2)
+    pool2 = pooling_layer(conv2)
 
+    pool2_flat = tf.contrib.layers.flatten(pool2)
+    # fully connected layer
+    num_inputs = 7 * 7 * 64
+    num_nodes = 1024
 
+    weight_vars3 = weight_variables([num_inputs, num_nodes])
+    bias_vars = bias_variables([num_nodes])
+    fc_layer = tf.nn.relu(tf.matmul(pool2_flat, weight_vars3) + bias_vars)
 
+    keep_prob = tf.placeholder(tf.float32)
+    dropout = tf.nn.dropout(fc_layer, keep_prob)
 
+    # Readout layer
+    weight_vars4 = weight_variables([num_nodes, 10])
+    bias_vars4 = bias_variables([10])
+    readout = tf.matmul(dropout, weight_vars4) + bias_vars4
+
+    # initilalize session
+    with tf.Session() as sess:
+        sess.run(tf.initialize_all_variables())
+        tdata = input_data.read_data_sets(FLAGS.data_dir,
+                one_hot=True)
+    # define loss
+        # reduce_mean is not reducing a value - its reducing a tensor to a
+        # single value
+        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_,
+                logits=readout))
+        training_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
+        correct_prediction = tf.equal(tf.argmax(readout,1), tf.argmax(y_, 1))
+        accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
+        sess.run(tf.global_variables_initializer())
+        for i in range(10000):
+            step_data = tdata.train.next_batch(50)
+            if i % 100 == 0:
+                step_accuracy = accuracy.eval(feed_dict={x:step_data[0], y_:step_data[1],
+                        keep_prob:1.0})
+                print('Step: %d Accuracy: %g'%(i, step_accuracy))
+            training_step.run(feed_dict={x:step_data[0], y_:step_data[1],
+                keep_prob:0.5})
+    # train
+
+    # print
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   parser.add_argument('--data_dir', type=str, default='/tmp/tensorflow/mnist/input_data',
                       help='Directory for storing input data')
   FLAGS, unparsed = parser.parse_known_args()
-  tf.app.run(main=main_NN, argv=[sys.argv[0]] + unparsed)
+  tf.app.run(main=main_NN_no_looking, argv=[sys.argv[0]] + unparsed)
+
