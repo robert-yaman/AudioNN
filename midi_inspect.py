@@ -87,9 +87,14 @@ def _microseconds_per_tick(resolution, mpqn):
     # |resolution| ticks per beat
     return mpqn / resolution
 
-# Two problems:
-    # not enough data points at the end
-    # missing the first note
+class _MFCCEvent(object):
+    ''' Represents the beginning of a new MFCC window.'''
+    def __init__(self, time):
+        self.time = time
+
+# This yields fewer data points than the MFCC processing, I think because this
+# doesn't take into account terminating silence. Therefore, just discard the
+# leftover MFCC pieces during training.
 def labelsForTrack(pattern, interval=23217):
     # Returns 2d numpy array of shape (88, N). Each slice along dim 2 is a one
     # hot encoding of the notes currently sounding at slice n of the pattern.
@@ -97,9 +102,6 @@ def labelsForTrack(pattern, interval=23217):
     #
     # Assumption: the first track of |pattern| contains only tempo changes. The
     # second track of pattern contains only noteOn and noteOff events.
-    # (remember that ticks change duration base on the tempo. Interestingly it
-    # seems like one note can span ticks that have different values if it
-    # stradles a tempo change!)
     pattern.make_ticks_abs()
 
     answer  = []
@@ -107,50 +109,53 @@ def labelsForTrack(pattern, interval=23217):
     # Use a one-hot encoding for currently sounding notes, since this is what
     # we will use as output representation.
     current_notes = [0] * 88
-    current_time_mod = 0
+    # Have to keep track of both time and tick value since MFFCs are in terms
+    # of microseconds, and MIDI events are in terms of ticks, and ticks can
+    # change micrsecond value based on tempo change events.
+    current_time = 0
+    last_tick_processed = 0
+    last_processed_midi_event_time = 0
 
     tempo_track = pattern[0]
     note_track = pattern[1]
     tempo_index = 0
     note_index = 0
 
-    # Used to keep track of how far each event is from the previous event.
-    last_tick_processed = 0
     while tempo_index < len(tempo_track) and note_index < len(note_track):
-        if current_time_mod > interval:
-            answer.append(current_notes[:])
-            # _display_one_hot(current_notes)
-            current_time_mod = current_time_mod - interval
-        # Figure out whats the next event to process
+        # find event (note, tempo, mfcc), process
         next_tempo_event = tempo_track[tempo_index]
         next_note_event = note_track[note_index]
-        if next_tempo_event.tick <= next_note_event.tick:
-            if not type(next_tempo_event) == midi.SetTempoEvent:
-                tempo_index += 1
-                continue
-            tick_change = next_tempo_event.tick - last_tick_processed
-            last_tick_processed = next_tempo_event.tick
-            # BUG - we're jumping over a bunch of MFCCs here.
-                # need an extra step where if the next step is past where the
-                # next MFCC starts, we jump to that spot, log the MFCC and try
-                # again
-            current_time_mod += tick_change * time_per_tick
+        next_mfcc_event =  _MFCCEvent((current_time - (current_time % interval)) + interval)
 
+        next_tempo_time = (last_processed_midi_event_time +
+                (next_tempo_event.tick - last_tick_processed) *
+                time_per_tick)
+        next_note_time = (last_processed_midi_event_time +
+                (next_note_event.tick - last_tick_processed) *
+                time_per_tick)
+        next_mfcc_time = next_mfcc_event.time
+
+        min_time = min(next_tempo_time, next_note_time, next_mfcc_time)
+
+        if next_tempo_time == min_time:
+            # Process tempo event
+            # Process tempos first so that the initial tempo is recorded.
             tempo_index += 1
+            if not type(next_tempo_event) == midi.SetTempoEvent:
+                continue
             time_per_tick = _microseconds_per_tick(pattern.resolution,
-                    next_tempo_event.mpqn)
-            print time_per_tick
-        else:
+                next_tempo_event.mpqn)
+
+            last_tick_processed = next_tempo_event.tick
+            current_time = next_tempo_time
+            last_processed_midi_event_time = next_tempo_time
+        elif next_note_time == min_time:
+            # Process note event
+            note_index += 1
             if not (type(next_note_event) == midi.NoteOnEvent or
                     type(next_note_event) == midi.NoteOffEvent):
-                note_index += 1
                 continue
-            tick_change = next_note_event.tick - last_tick_processed
-            last_tick_processed = next_note_event.tick
 
-            current_time_mod += tick_change * time_per_tick
-
-            note_index += 1
             pitch = next_note_event.get_pitch()
             if type(next_note_event) == midi.NoteOnEvent:
                 if current_notes[pitch]:
@@ -160,6 +165,17 @@ def labelsForTrack(pattern, interval=23217):
                 if not current_notes[pitch]:
                     print("ERROR: Note already OFF: %d" % pitch)
                 current_notes[pitch] = 0
+
+            last_tick_processed = next_note_event.tick
+            current_time = next_note_time
+            last_processed_midi_event_time = next_note_time
+        elif next_mfcc_time == min_time:
+            # Process MFCC event
+            answer.append(current_notes[:])
+            # print _display_one_hot(current_notes)
+            current_time = next_mfcc_time
+        else:
+            print "ERROR: Min time is miscalculated."
     return answer
 
 
