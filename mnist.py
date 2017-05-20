@@ -221,6 +221,10 @@ def main_NN_no_looking(_):
         accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
         sess.run(tf.global_variables_initializer())
         for i in range(10000):
+            # Q: is the reason that we're taking the next 50 examples here
+            # because we are using stochastic GD? This part of the alg is a bit
+            # fuzzy.
+                # A: We are using mini batch gradient descent here.
             step_data = tdata.train.next_batch(50)
             if i % 100 == 0:
                 step_accuracy = accuracy.eval(feed_dict={x:step_data[0], y_:step_data[1],

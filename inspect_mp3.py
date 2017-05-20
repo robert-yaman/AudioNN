@@ -8,6 +8,7 @@ def mfccFromTimeSeries(timeSeries, sr):
     return librosa.feature.mfcc(timeSeries, sr=sr)
 
 def mfccFromPath(audio_path):
+    # Returns np 2darray of shape (20, x). Each MFCC has length .023217s
     times_series, sr = librosa.load(audio_path)
     return mfccFromTimeSeries(times_series, sr)
 
