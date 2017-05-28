@@ -3,9 +3,10 @@ import librosa.display
 import sys
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 
 def mfccFromTimeSeries(timeSeries, sr):
-    return librosa.feature.mfcc(timeSeries, sr=sr)
+    return np.rot90(librosa.feature.mfcc(timeSeries, sr=sr))
 
 def mfccFromPath(audio_path):
     # Returns np 2darray of shape (20, x). Each MFCC has length .023217s

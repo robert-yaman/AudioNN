@@ -10,6 +10,7 @@ import sys
 from tensorflow.examples.tutorials.mnist import input_data
 
 import tensorflow as tf
+import numpy
 
 FLAGS = None
 
@@ -71,6 +72,8 @@ def main_NN(_):
             # what is batch? - num of filters we want
         # W is filter
         # (returns an entire convolutional step, not merely a layer
+        # Note that padding layer size will depend on the filter size. E.g. 5x5
+        # filter will have padding layer of 2.
         return tf.nn.conv2d(x,W, strides=[1,1,1,1], padding = 'SAME')
     def max_pool_2x2(x):
         return tf.nn.max_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1],
@@ -171,6 +174,7 @@ def main_NN_no_looking(_):
 
     # -1 because we don't know ahead of time how big it wil be
     x_image = tf.reshape(x,[-1, 28,28,1])
+
     # First conv layer
     num_filters1 = 32
     # Q: Why is the first dimension 5 when the first dimension of the input is
