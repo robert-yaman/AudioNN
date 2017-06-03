@@ -189,9 +189,10 @@ def labelsForNoteTrack(pattern, interval=23217, verbose=False):
                     type(next_note_event) == midi.NoteOffEvent):
                 continue
 
-            pitch = next_note_event.get_pitch() - 21
+            pitch = next_note_event.get_pitch() - 15
             if type(next_note_event) == midi.NoteOnEvent:
                 # Sometimes two NoteOnEvents represent an On/Off pair.
+                print pitch
                 current_notes[pitch] = 1 - current_notes[pitch]
             elif type(next_note_event) == midi.NoteOffEvent:
                 if not current_notes[pitch]:
@@ -230,5 +231,5 @@ if __name__ == "__main__":
     pattern =midi.read_midifile(midi_path)
     #print pattern
     #midi.write_midifile("example.mid", pattern)
-    #print(noteTrackForPattern(pattern))
-    print labelsForPath(midi_path, verbose=True)
+    print(noteTrackForPattern(pattern))
+    #print labelsForPath(midi_path, verbose=True)

@@ -12,6 +12,14 @@ def mfccFromPath(audio_path):
     times_series, sr = librosa.load(audio_path)
     return mfccFromTimeSeries(times_series, sr)
 
+def isAudio(filename):
+    audio_extensions = ['wav','mp3','m4a']
+    is_audio = False
+    for extension in audio_extensions:
+        if filename.endswith(extension):
+            is_audio = True
+    return is_audio
+
 if __name__ == "__main__":
     # Take all of the audio files in training_labels/raw/, process them and add
     # them to training_labels/training_labels.csv.
@@ -20,14 +28,6 @@ if __name__ == "__main__":
     # tracks as long as the index numbers are matched up correctly.
     raw_data_path = './training_labels/raw/'
     csv_path = './training_labels/training_labels.csv'
-
-    def isAudio(filename): 
-        audio_extensions = ['wav','mp3','m4a']
-        is_audio = False
-        for extension in audio_extensions:
-            if filename.endswith(extension):
-                is_audio = True
-        return is_audio
 
     with open(csv_path, 'wb') as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
