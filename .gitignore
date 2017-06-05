@@ -2,4 +2,4 @@ build
 *.pyc
 .coverage
 .*.sw?
-data/*
+data/*.csv
