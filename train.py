@@ -23,7 +23,7 @@ def _get_data(validation=False):
         feature_file = tf.train.string_input_producer([VALIDATIOIN_DATA if validation else
                 TRAINING_DATA])
         _, csv_row = data_reader.read(feature_file)
-        record_defaults = [[0]] * 20
+        record_defaults = [[0.0]] * 20
         features = tf.stack(list(tf.decode_csv(csv_row,
             record_defaults=record_defaults)))
 
@@ -52,9 +52,10 @@ def main(argv=None):
     readout, keep_prob = model.get_transcription_model(example_batch)
 
     # Don't use softmax since the outputs aren't mutually exclusive.
-    loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
-            logits=readout))
     with tf.name_scope('train'):
+        loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
+                logits=readout))
+        tf.summary.scalar('loss', loss)
         training_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
 
     def interpretation(logit, cutoff):
@@ -116,14 +117,15 @@ def main(argv=None):
             step = 0
             while not coord.should_stop():
                 step += 1
-                if step % 1000:
-                    loss, summary = sess.run([loss, summary], feed_dict={keep_prob:1.0})
-                    print('Step: %d\n    Loss: %d' %(step, loss))
-                    train_writer.add_summary(summary, step)
+                print "Step: %d" % step
+                if step % 1000 == 0:
+                    loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
+                    print('Step: %d\n    Loss: %f' %(step, loss_val))
+                    train_writer.add_summary(summary_val, step)
                 else:
-                    _, summary = sess.run([training_step, summary],
+                    _, summary_val = sess.run([training_step, summary],
                             feed_dict={keep_prob:0.5})
-                    test_writer.add_summary(summary, step)
+                    test_writer.add_summary(summary_val, step)
         except tf.errors.OutOfRangeError:
             print("DONE TRAINING")
         finally:

@@ -74,9 +74,11 @@ def get_transcription_model(examples):
 
     with tf.name_scope('readout'):
         # TODO: Do I need to take sigmoid here since I'm not using softmax?
+            # Note that my loss function takes sigmoid
         weight_vars4 = weight_variables([num_nodes3, 88])
         bias_vars4 = bias_variables([88])
 
         readout = tf.matmul(fc_layer_dropout, weight_vars4) + bias_vars4
+        tf.summary.histogram('histogram', readout)
 
     return readout, keep_prob
