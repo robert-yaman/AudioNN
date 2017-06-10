@@ -9,7 +9,7 @@ TRAINING_DATA_PATH = 'training_data/raw/'
 TRAINING_LABELS_CSV = 'training_labels/training_labels.csv'
 TRAINING_LABELS_PATH = 'training_labels/raw/'
 VALIDATION_DATA_CSV = 'validation_data/validation_data.csv'
-VALIDATION_LABELS_CSV = 'validation_data/validation_data.csv'
+VALIDATION_LABELS_CSV = 'validation_labels/validation_labels.csv'
 
 def main():
     '''Script to generate data for training and validation.'''
@@ -23,12 +23,12 @@ def main():
         mp3_path = TRAINING_LABELS_PATH +song_name + ".mp3"
         # Do try statemtn
         try:
-            training = midi_inspect.labelsForPath(midi_path)
+             labels = midi_inspect.labelsForPath(midi_path)
         except:
             print "<<<<<<<<< ERROR in MIDI: " + song_name
             continue
         try:
-            labels = mp3_inspect.mfccFromPath(mp3_path)
+            training = mp3_inspect.mfccFromPath(mp3_path)
         except:
             print "<<<<<<< ERROR in MFCCs: " + song_name
             continue
