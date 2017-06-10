@@ -1,0 +1,4311 @@
+ssing aria
+Original:
+  7373
+  7287
+Final:
+  7287
+  7287
+Processing beethoven_opus10_1
+Original:
+  16949
+  16856
+Final:
+  16856
+  16856
+Processing beethoven_opus10_2
+Original:
+  16981
+  16738
+Final:
+  16738
+  16738
+Processing beethoven_opus10_3
+Original:
+  9423
+  9345
+Final:
+  9345
+  9345
+Processing cap2
+Original:
+  9607
+  9546
+Final:
+  9546
+  9546
+Processing chp_op18
+Original:
+  13447
+  13314
+Final:
+  13314
+  13314
+Processing chpn-p1
+Original:
+  1386
+  1354
+Final:
+  1354
+  1354
+Processing chpn-p10
+Original:
+  1060
+  1003
+Final:
+  1003
+  1003
+Processing chpn-p11
+Original:
+  1389
+  1302
+Final:
+  1302
+  1302
+Processing chpn-p12
+Original:
+  2525
+  2439
+Final:
+  2439
+  2439
+Processing chpn-p13
+Original:
+  6696
+  6575
+Final:
+  6575
+  6575
+Processing chpn-p14
+Original:
+  1238
+  1224
+Final:
+  1224
+  1224
+Processing chpn-p15
+Original:
+  11796
+  11812
+Final:
+  11796
+  11796
+Processing chpn-p16
+Original:
+  2724
+  2633
+Final:
+  2633
+  2633
+Processing chpn-p17
+Original:
+  6940
+  6739
+Final:
+  6739
+  6739
+Processing chpn-p18
+Original:
+  2052
+  1903
+Final:
+  1903
+  1903
+Processing chpn-p19
+Original:
+  2957
+  2896
+Final:
+  2896
+  2896
+Processing chpn-p2
+Original:
+  5042
+  5236
+Final:
+  5042
+  5042
+Processing chpn-p20
+Original:
+  3830
+  3855
+Final:
+  3830
+  3830
+Processing chpn-p21
+Original:
+  4675
+  4527
+Final:
+  4527
+  4527
+Processing chpn-p22
+Original:
+  1804
+  1783
+Final:
+  1783
+  1783
+Processing chpn-p23
+Original:
+  2224
+  2093
+Final:
+  2093
+  2093
+Processing chpn-p24
+Original:
+  5489
+  5306
+Final:
+  5306
+  5306
+Processing chpn-p3
+Original:
+  2289
+  2202
+Final:
+  2202
+  2202
+Processing chpn-p4
+Original:
+  4400
+  4455
+Final:
+  4400
+  4400
+Processing chpn-p5
+Original:
+  1395
+  1308
+Final:
+  1308
+  1308
+Processing chpn-p6
+Original:
+  4062
+  4139
+Final:
+  4062
+  4062
+Processing chpn-p7
+Original:
+  1630
+  1594
+Final:
+  1594
+  1594
+Processing chpn-p8
+Original:
+  4102
+  3818
+Final:
+  3818
+  3818
+Processing chpn-p9
+Original:
+  3923
+  3836
+Final:
+  3836
+  3836
+Processing chpn_op10_e01
+Original:
+  4890
+  4758
+Final:
+  4758
+  4758
+Processing chpn_op10_e05
+Original:
+  4022
+  3935
+Final:
+  3935
+  3935
+Processing chpn_op10_e12
+Original:
+  6065
+  5978
+Final:
+  5978
+  5978
+Processing chpn_op23
+Original:
+  23320
+  23236
+Final:
+  23236
+  23236
+Processing chpn_op25_e1
+Original:
+  5412
+  5417
+Final:
+  5412
+  5412
+Processing chpn_op25_e11
+Original:
+  8139
+  8053
+Final:
+  8053
+  8053
+Processing chpn_op25_e12
+Original:
+  6028
+  5872
+Final:
+  5872
+  5872
+Processing chpn_op25_e2
+Original:
+  4554
+  5227
+Final:
+  4554
+  4554
+Processing chpn_op25_e3
+Original:
+  4540
+  4438
+Final:
+  4438
+  4438
+Processing chpn_op25_e4
+Original:
+  3622
+  3575
+Final:
+  3575
+  3575
+Processing chpn_op33_2
+Original:
+  6214
+  6157
+Final:
+  6157
+  6157
+Processing chpn_op33_4
+Original:
+  13612
+  13667
+Final:
+  13612
+  13612
+Processing chpn_op53
+Original:
+  15246
+  15551
+Final:
+  15246
+  15246
+Processing chpn_op66
+Original:
+  11905
+  11646
+Final:
+  11646
+  11646
+Processing chpn_op7_1
+Original:
+  5932
+  5917
+Final:
+  5917
+  5917
+Processing chpn_op7_2
+Original:
+  6914
+  6907
+Final:
+  6907
+  6907
+Processing clementi_opus36_1_1
+Original:
+  3996
+  3909
+Final:
+  3909
+  3909
+Processing clementi_opus36_1_2
+Original:
+  3163
+  2938
+Final:
+  2938
+  2938
+Processing clementi_opus36_1_3
+Original:
+  2517
+  2390
+Final:
+  2390
+  2390
+Processing clementi_opus36_2_1
+Original:
+  5202
+  5104
+Final:
+  5104
+  5104
+Processing clementi_opus36_2_2
+Original:
+  2930
+  2843
+Final:
+  2843
+  2843
+Processing clementi_opus36_2_3
+Original:
+  4126
+  4017
+Final:
+  4017
+  4017
+Processing clementi_opus36_3_1
+Original:
+  7555
+  7469
+Final:
+  7469
+  7469
+Processing clementi_opus36_3_2
+Original:
+  3869
+  3782
+Final:
+  3782
+  3782
+Processing clementi_opus36_3_3
+Original:
+  3497
+  3407
+Final:
+  3407
+  3407
+Processing clementi_opus36_4_1
+Original:
+  8635
+  8549
+Final:
+  8549
+  8549
+Processing clementi_opus36_4_2
+Original:
+  4616
+  4482
+Final:
+  4482
+  4482
+Processing clementi_opus36_4_3
+Original:
+  4688
+  4596
+Final:
+  4596
+  4596
+Processing clementi_opus36_5_1
+Original:
+  12763
+  12730
+Final:
+  12730
+  12730
+Processing clementi_opus36_5_2
+Original:
+  4720
+  4596
+Final:
+  4596
+  4596
+Processing clementi_opus36_5_3
+Original:
+  7643
+  7578
+Final:
+  7578
+  7578
+Processing clementi_opus36_6_1
+Original:
+  13870
+  13809
+Final:
+  13809
+  13809
+Processing clementi_opus36_6_2
+Original:
+  5945
+  5883
+Final:
+  5883
+  5883
+Processing cou1
+Original:
+  6650
+  6708
+Final:
+  6650
+  6650
+Processing cou2
+Original:
+  6663
+  6599
+Final:
+  6599
+  6599
+Processing elise
+Original:
+  7181
+  7132
+Final:
+  7132
+  7132
+Processing fugue1-2
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+Original:
+  4585
+  4512
+Final:
+  4512
+  4512
+Processing fugue1
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 27
+Original:
+  4508
+  4442
+Final:
+  4442
+  4442
+Processing fugue10-2
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+Original:
+  9557
+  9560
+Final:
+  9557
+  9557
+Processing fugue10
+Original:
+  4684
+  4597
+Final:
+  4597
+  4597
+Processing fugue11-2
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+Original:
+  5886
+  5829
+Final:
+  5829
+  5829
+Processing fugue11
+<<<<<<<<< ERROR in MIDI: fugue11
+Processing fugue12-2
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+Original:
+  4711
+  4665
+Final:
+  4665
+  4665
+Processing fugue12
+<<<<<<<<< ERROR in MIDI: fugue12
+Processing fugue13
+<<<<<<<<< ERROR in MIDI: fugue13
+Processing fugue14
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+Original:
+  4970
+  4904
+Final:
+  4904
+  4904
+Processing fugue15
+<<<<<<<<< ERROR in MIDI: fugue15
+Processing fugue16
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+Original:
+  3805
+  3732
+Final:
+  3732
+  3732
+Processing fugue17
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+Original:
+  5380
+  5331
+Final:
+  5331
+  5331
+Processing fugue18
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+Original:
+  5370
+  5316
+Final:
+  5316
+  5316
+Processing fugue19
+<<<<<<<<< ERROR in MIDI: fugue19
+Processing fugue2-2
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+Original:
+  4340
+  4272
+Final:
+  4272
+  4272
+Processing fugue2
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+Original:
+  4946
+  4879
+Final:
+  4879
+  4879
+Processing fugue20
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+Original:
+  10328
+  10256
+Final:
+  10256
+  10256
+Processing fugue21
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+Original:
+  4778
+  4708
+Final:
+  4708
+  4708
+Processing fugue22
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+Original:
+  5505
+  5419
+Final:
+  5419
+  5419
+Processing fugue23
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 30
+Original:
+  5301
+  5234
+Final:
+  5234
+  5234
+Processing fugue24
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 59
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 59
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 33
+Original:
+  13217
+  13153
+Final:
+  13153
+  13153
+Processing fugue3-2
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+Original:
+  4672
+  4602
+Final:
+  4602
+  4602
+Processing fugue3
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+Original:
+  7025
+  6986
+Final:
+  6986
+  6986
+Processing fugue4-2
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+Original:
+  7921
+  7835
+Final:
+  7835
+  7835
+Processing fugue4
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 23
+ERROR: Note already OFF: 23
+Original:
+  8406
+  8320
+Final:
+  8320
+  8320
+Processing fugue5-2
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+Original:
+  4901
+  4826
+Final:
+  4826
+  4826
+Processing fugue5
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  4362
+  4314
+Final:
+  4314
+  4314
+Processing fugue6-2
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+Original:
+  4501
+  4414
+Final:
+  4414
+  4414
+Processing fugue6
+<<<<<<<<< ERROR in MIDI: fugue6
+Processing fugue7-2
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+Original:
+  5128
+  5042
+Final:
+  5042
+  5042
+Processing fugue7
+Original:
+  5160
+  5073
+Final:
+  5073
+  5073
+Processing fugue8-2
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+Original:
+  5083
+  5009
+Final:
+  5009
+  5009
+Processing fugue8
+<<<<<<<<< ERROR in MIDI: fugue8
+Processing fugue9-2
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+Original:
+  5955
+  5869
+Final:
+  5869
+  5869
+Processing fugue9
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+Original:
+  4420
+  4390
+Final:
+  4390
+  4390
+Processing gig1
+Original:
+  6286
+  6216
+Final:
+  6216
+  6216
+Processing goldberg
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 62
+ERROR: Note already OFF: 62
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 60
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 26
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+Original:
+  142437
+  142368
+Final:
+  142368
+  142368
+Processing hay-p20a
+Original:
+  11772
+  11686
+Final:
+  11686
+  11686
+Processing hay-p20b
+Original:
+  9722
+  9636
+Final:
+  9636
+  9636
+Processing hay-p20c
+Original:
+  8305
+  8255
+Final:
+  8255
+  8255
+Processing hay_40_1
+Original:
+  17008
+  16980
+Final:
+  16980
+  16980
+Processing hay_40_2
+Original:
+  7810
+  7724
+Final:
+  7724
+  7724
+Processing haydn_33_1
+Original:
+  14627
+  14577
+Final:
+  14577
+  14577
+Processing haydn_33_2
+Original:
+  13795
+  13709
+Final:
+  13709
+  13709
+Processing haydn_33_3
+Original:
+  10241
+  10198
+Final:
+  10198
+  10198
+Processing haydn_35_1
+Original:
+  14996
+  14948
+Final:
+  14948
+  14948
+Processing haydn_35_2
+Original:
+  17027
+  17030
+Final:
+  17027
+  17027
+Processing haydn_35_3
+Original:
+  6312
+  6216
+Final:
+  6216
+  6216
+Processing haydn_43_1
+Original:
+  16307
+  16269
+Final:
+  16269
+  16269
+Processing haydn_43_2
+Original:
+  6452
+  6409
+Final:
+  6409
+  6409
+Processing haydn_43_3
+Original:
+  13277
+  13220
+Final:
+  13220
+  13220
+Processing haydn_7_1
+Original:
+  2803
+  2716
+Final:
+  2716
+  2716
+Processing haydn_7_2
+Original:
+  6091
+  6005
+Final:
+  6005
+  6005
+Processing haydn_7_3
+Original:
+  3980
+  3893
+Final:
+  3893
+  3893
+Processing haydn_8_1
+Original:
+  5316
+  5267
+Final:
+  5267
+  5267
+Processing haydn_8_2
+Original:
+  2583
+  2496
+Final:
+  2496
+  2496
+Processing haydn_8_3
+Original:
+  3808
+  3797
+Final:
+  3797
+  3797
+Processing haydn_8_4
+Original:
+  1827
+  1740
+Final:
+  1740
+  1740
+Processing haydn_9_1
+Original:
+  6310
+  6184
+Final:
+  6184
+  6184
+Processing haydn_9_2
+Original:
+  7400
+  7314
+Final:
+  7314
+  7314
+Processing haydn_9_3
+Original:
+  2226
+  2172
+Final:
+  2172
+  2172
+Processing hayso191
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 63
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 63
+ERROR: Note already OFF: 55
+Original:
+  10703
+  10617
+Final:
+  10617
+  10617
+Processing invent1
+Original:
+  2723
+  2644
+Final:
+  2644
+  2644
+Processing invent10
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+Original:
+  1976
+  1889
+Final:
+  1889
+  1889
+Processing invent11
+Original:
+  2978
+  2891
+Final:
+  2891
+  2891
+Processing invent12
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+Original:
+  3046
+  2960
+Final:
+  2960
+  2960
+Processing invent13
+Original:
+  2952
+  2865
+Final:
+  2865
+  2865
+Processing invent14
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+Original:
+  3446
+  3359
+Final:
+  3359
+  3359
+Processing invent15
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+Original:
+  2794
+  2707
+Final:
+  2707
+  2707
+Processing invent2
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  3106
+  3033
+Final:
+  3033
+  3033
+Processing invent3
+Original:
+  2685
+  2627
+Final:
+  2627
+  2627
+Processing invent4
+Original:
+  2162
+  2075
+Final:
+  2075
+  2075
+Processing invent5
+Original:
+  3446
+  3359
+Final:
+  3359
+  3359
+Processing invent6
+Original:
+  6781
+  6695
+Final:
+  6695
+  6695
+Processing invent7
+Original:
+  2312
+  2225
+Final:
+  2225
+  2225
+Processing invent8
+Original:
+  2251
+  2175
+Final:
+  2175
+  2175
+Processing invent9
+Original:
+  2722
+  2635
+Final:
+  2635
+  2635
+Processing jg15_1
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+Original:
+  8796
+  11122
+Final:
+  8796
+  8796
+Processing jg15_2
+Original:
+  7491
+  10652
+Final:
+  7491
+  7491
+Processing jg15_3
+Original:
+  6592
+  6868
+Final:
+  6592
+  6592
+Processing k001
+Original:
+  3241
+  3359
+Final:
+  3241
+  3241
+Processing k002
+Original:
+  3539
+  3704
+Final:
+  3539
+  3539
+Processing k003
+Original:
+  4076
+  4134
+Final:
+  4076
+  4076
+Processing k004
+Original:
+  4391
+  4479
+Final:
+  4391
+  4391
+Processing k005
+Original:
+  4539
+  4737
+Final:
+  4539
+  4539
+Processing k006
+Original:
+  4075
+  4221
+Final:
+  4075
+  4075
+Processing k007
+Original:
+  6522
+  6633
+Final:
+  6522
+  6522
+Processing k008
+Original:
+  4353
+  4565
+Final:
+  4353
+  4353
+Processing k010
+Original:
+  3413
+  3618
+Final:
+  3413
+  3413
+Processing k012 (1)
+Original:
+  5150
+  5340
+Final:
+  5150
+  5150
+Processing k012
+Original:
+  5150
+  5340
+Final:
+  5150
+  5150
+Processing k013
+Original:
+  5702
+  5685
+Final:
+  5685
+  5685
+Processing k014
+Original:
+  4412
+  4565
+Final:
+  4412
+  4412
+Processing k015
+Original:
+  4528
+  4651
+Final:
+  4528
+  4528
+Processing k016
+Original:
+  9046
+  9217
+Final:
+  9046
+  9046
+Processing k017
+Original:
+  5173
+  5340
+Final:
+  5173
+  5173
+Processing k018
+Original:
+  5495
+  5599
+Final:
+  5495
+  5495
+Processing k019
+Original:
+  5716
+  5771
+Final:
+  5716
+  5716
+Processing k020
+Original:
+  4769
+  4910
+Final:
+  4769
+  4769
+Processing k021
+Original:
+  7337
+  7494
+Final:
+  7337
+  7337
+Processing k022
+Original:
+  4205
+  4393
+Final:
+  4205
+  4205
+Processing k023
+Original:
+  7668
+  7752
+Final:
+  7668
+  7668
+Processing k024
+Original:
+  6955
+  7149
+Final:
+  6955
+  6955
+Processing k026
+Original:
+  6279
+  6374
+Final:
+  6279
+  6279
+Processing k027
+Original:
+  4560
+  4737
+Final:
+  4560
+  4560
+Processing k029
+Original:
+  7819
+  7839
+Final:
+  7819
+  7819
+Processing k030
+Original:
+  10866
+  11026
+Final:
+  10866
+  10866
+Processing k031
+Original:
+  5697
+  5771
+Final:
+  5697
+  5697
+Processing k032
+Original:
+  1721
+  1809
+Final:
+  1721
+  1721
+Processing k033
+Original:
+  5180
+  5340
+Final:
+  5180
+  5180
+Processing k034
+Original:
+  1860
+  1981
+Final:
+  1860
+  1860
+Processing k035
+Original:
+  3797
+  3876
+Final:
+  3797
+  3797
+Processing k036
+Original:
+  3881
+  4048
+Final:
+  3881
+  3881
+Processing k037
+Original:
+  5232
+  5340
+Final:
+  5232
+  5232
+Processing k038
+Original:
+  3123
+  3273
+Final:
+  3123
+  3123
+Processing k039
+Original:
+  5061
+  5082
+Final:
+  5061
+  5061
+Processing k041
+Original:
+  13761
+  13955
+Final:
+  13761
+  13761
+Processing k042
+Original:
+  1881
+  1895
+Final:
+  1881
+  1881
+Processing k043
+Original:
+  4068
+  4221
+Final:
+  4068
+  4068
+Processing k044
+Original:
+  6397
+  6460
+Final:
+  6397
+  6397
+Processing k045
+Original:
+  4382
+  4479
+Final:
+  4382
+  4382
+Processing k046
+Original:
+  7277
+  7322
+Final:
+  7277
+  7277
+Processing k047
+Original:
+  6633
+  6719
+Final:
+  6633
+  6633
+Processing k048
+Original:
+  4984
+  5168
+Final:
+  4984
+  4984
+Processing k049
+Original:
+  7041
+  7149
+Final:
+  7041
+  7041
+Processing k050
+Original:
+  6090
+  6202
+Final:
+  6090
+  6090
+Processing k051
+Original:
+  4930
+  5082
+Final:
+  4930
+  4930
+Processing k052
+Original:
+  8030
+  8011
+Final:
+  8011
+  8011
+Processing k053
+Original:
+  4498
+  4651
+Final:
+  4498
+  4498
+Processing k054
+Original:
+  6679
+  6805
+Final:
+  6679
+  6679
+Processing k055
+Original:
+  4724
+  4824
+Final:
+  4724
+  4724
+Processing k056
+Original:
+  6402
+  6460
+Final:
+  6402
+  6402
+Processing k057
+Original:
+  6942
+  7063
+Final:
+  6942
+  6942
+Processing k058
+Original:
+  7998
+  8183
+Final:
+  7998
+  7998
+Processing k059
+Original:
+  2843
+  2928
+Final:
+  2843
+  2843
+Processing k060
+Original:
+  3554
+  3704
+Final:
+  3554
+  3554
+Processing k061
+Original:
+  8236
+  8269
+Final:
+  8236
+  8236
+Processing k062
+Original:
+  4292
+  4393
+Final:
+  4292
+  4292
+Processing k063
+Original:
+  3000
+  2928
+Final:
+  2928
+  2928
+Processing k064
+Original:
+  2379
+  2498
+Final:
+  2379
+  2379
+Processing k065
+Original:
+  2842
+  3015
+Final:
+  2842
+  2842
+Processing k067
+Original:
+  2655
+  2842
+Final:
+  2655
+  2655
+Processing k068
+Original:
+  4683
+  4824
+Final:
+  4683
+  4683
+Processing k069
+Original:
+  4757
+  4824
+Final:
+  4757
+  4757
+Processing k070
+Original:
+  3166
+  3359
+Final:
+  3166
+  3166
+Processing k071
+Original:
+  2779
+  2928
+Final:
+  2779
+  2779
+Processing k072
+Original:
+  3548
+  3704
+Final:
+  3548
+  3548
+Processing k074
+Original:
+  2132
+  2239
+Final:
+  2132
+  2132
+Processing k075
+Original:
+  2303
+  2325
+Final:
+  2303
+  2303
+Processing k076
+Original:
+  3078
+  3101
+Final:
+  3078
+  3078
+Processing k079
+Original:
+  3769
+  3876
+Final:
+  3769
+  3769
+Processing k080
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  2453
+  2498
+Final:
+  2453
+  2453
+Processing k082
+Original:
+  7092
+  7236
+Final:
+  7092
+  7092
+Processing k083
+Original:
+  3861
+  4048
+Final:
+  3861
+  3861
+Processing k084
+Original:
+  5152
+  5340
+Final:
+  5152
+  5152
+Processing k085
+Original:
+  4820
+  4996
+Final:
+  4820
+  4820
+Processing k086
+Original:
+  7182
+  7236
+Final:
+  7182
+  7182
+Processing k087
+Original:
+  6584
+  6719
+Final:
+  6584
+  6584
+Processing k092
+Original:
+  5171
+  5427
+Final:
+  5171
+  5171
+Processing k093
+Original:
+  9788
+  10078
+Final:
+  9788
+  9788
+Processing k094
+Original:
+  2134
+  2239
+Final:
+  2134
+  2134
+Processing k095
+Original:
+  2348
+  2498
+Final:
+  2348
+  2348
+Processing k096
+Original:
+  7981
+  8183
+Final:
+  7981
+  7981
+Processing k097
+Original:
+  9983
+  10078
+Final:
+  9983
+  9983
+Processing k099
+Original:
+  5767
+  5685
+Final:
+  5685
+  5685
+Processing k100
+Original:
+  4151
+  4221
+Final:
+  4151
+  4151
+Processing k101
+Original:
+  5577
+  5771
+Final:
+  5577
+  5577
+Processing k103
+Original:
+  4775
+  4737
+Final:
+  4737
+  4737
+Processing k104
+Original:
+  8260
+  8442
+Final:
+  8260
+  8260
+Processing k105
+Original:
+  8046
+  8183
+Final:
+  8046
+  8046
+Processing k106 (1)
+Original:
+  3914
+  3876
+Final:
+  3876
+  3876
+Processing k106
+Original:
+  3914
+  3876
+Final:
+  3876
+  3876
+Processing k107
+Original:
+  6071
+  6202
+Final:
+  6071
+  6071
+Processing k108
+Original:
+  4501
+  4651
+Final:
+  4501
+  4501
+Processing k109
+Original:
+  7463
+  7408
+Final:
+  7408
+  7408
+Processing k110
+Original:
+  5009
+  5168
+Final:
+  5009
+  5009
+Processing k111
+Original:
+  4560
+  4651
+Final:
+  4560
+  4560
+Processing men1
+Original:
+  7070
+  7088
+Final:
+  7070
+  7070
+Processing mond_1
+Original:
+  15887
+  15591
+Final:
+  15591
+  15591
+Processing mond_2
+Original:
+  5404
+  5342
+Final:
+  5342
+  5342
+Processing mond_3
+Original:
+  17759
+  17674
+Final:
+  17674
+  17674
+Processing mz_311_1
+Original:
+  29468
+  30188
+Final:
+  29468
+  29468
+Processing mz_311_2
+Original:
+  84680
+  86621
+Final:
+  84680
+  84680
+Processing mz_311_3
+Original:
+  25836
+  26110
+Final:
+  25836
+  25836
+Processing mz_330_1
+Original:
+  23246
+  23162
+Final:
+  23162
+  23162
+Processing mz_330_2
+Original:
+  16952
+  17049
+Final:
+  16952
+  16952
+Processing mz_330_3
+Original:
+  20858
+  20765
+Final:
+  20765
+  20765
+Processing mz_331_1
+Original:
+  35881
+  35788
+Final:
+  35788
+  35788
+Processing mz_331_2
+Original:
+  15833
+  15748
+Final:
+  15748
+  15748
+Processing mz_331_3
+Original:
+  8256
+  8165
+Final:
+  8165
+  8165
+Processing mz_332_1
+Original:
+  24650
+  24616
+Final:
+  24616
+  24616
+Processing mz_332_2
+Original:
+  11509
+  11344
+Final:
+  11344
+  11344
+Processing mz_332_3
+Original:
+  25493
+  25409
+Final:
+  25409
+  25409
+Processing mz_333_1
+Original:
+  27106
+  27125
+Final:
+  27106
+  27106
+Processing mz_333_2
+Original:
+  22602
+  22499
+Final:
+  22499
+  22499
+Processing mz_333_3
+Original:
+  15085
+  15000
+Final:
+  15000
+  15000
+Processing mz_545_1
+Original:
+  11335
+  11247
+Final:
+  11247
+  11247
+Processing mz_545_2
+Original:
+  14913
+  14828
+Final:
+  14828
+  14828
+Processing mz_545_3
+Original:
+  4540
+  4551
+Final:
+  4540
+  4540
+Processing mz_570_1
+Original:
+  20589
+  20505
+Final:
+  20505
+  20505
+Processing mz_570_2
+Original:
+  19705
+  19574
+Final:
+  19574
+  19574
+Processing mz_570_3
+Original:
+  8652
+  8625
+Final:
+  8625
+  8625
+Processing pathetique_1
+Original:
+  24183
+  24099
+Final:
+  24099
+  24099
+Processing pathetique_2
+Original:
+  13338
+  13310
+Final:
+  13310
+  13310
+Processing pathetique_3
+Original:
+  11074
+  11080
+Final:
+  11074
+  11074
+Processing pre1
+Original:
+  5214
+  5158
+Final:
+  5158
+  5158
+Processing prelude1-2
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 47
+Original:
+  9151
+  9097
+Final:
+  9097
+  9097
+Processing prelude1
+<<<<<<<<< ERROR in MIDI: prelude1
+Processing prelude2-2
+Original:
+  6143
+  6057
+Final:
+  6057
+  6057
+Processing prelude2
+<<<<<<<<< ERROR in MIDI: prelude2
+Processing prelude3-2
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+Original:
+  3652
+  3566
+Final:
+  3566
+  3566
+Processing prelude3
+Original:
+  4394
+  4307
+Final:
+  4307
+  4307
+Processing prelude4-2
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+Original:
+  7048
+  6961
+Final:
+  6961
+  6961
+Processing prelude4
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 28
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 23
+ERROR: Note already OFF: 23
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+Original:
+  5463
+  5376
+Final:
+  5376
+  5376
+Processing prelude5-2
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+Original:
+  16208
+  16122
+Final:
+  16122
+  16122
+Processing prelude5
+Original:
+  5493
+  5407
+Final:
+  5407
+  5407
+Processing prelude6-2
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  5098
+  5011
+Final:
+  5011
+  5011
+Processing prelude6
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+Original:
+  3722
+  3636
+Final:
+  3636
+  3636
+Processing prelude7-2
+Original:
+  5915
+  5828
+Final:
+  5828
+  5828
+Processing prelude7
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 27
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 35
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 54
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 30
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 47
+ERROR: Note already OFF: 47
+Original:
+  9235
+  9149
+Final:
+  9149
+  9149
+Processing prelude8-2
+Original:
+  10423
+  10337
+Final:
+  10337
+  10337
+Processing prelude8
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 42
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 32
+ERROR: Note already OFF: 32
+Original:
+  9458
+  9372
+Final:
+  9372
+  9372
+Processing prelude9-2
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+Original:
+  8862
+  8776
+Final:
+  8776
+  8776
+Processing prelude9
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+Original:
+  2909
+  2822
+Final:
+  2822
+  2822
+Processing ron2
+Original:
+  4313
+  4208
+Final:
+  4208
+  4208
+Processing sar1
+Original:
+  11862
+  11766
+Final:
+  11766
+  11766
+Processing sar2
+Original:
+  9599
+  9545
+Final:
+  9545
+  9545
+Processing scad25
+ERROR: Note already OFF: 14
+ERROR: Note already OFF: 14
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 14
+ERROR: Note already OFF: 14
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+Original:
+  12898
+  12813
+Final:
+  12813
+  12813
+Processing scad_009
+Original:
+  4077
+  3964
+Final:
+  3964
+  3964
+Processing sin2
+Original:
+  13108
+  13090
+Final:
+  13090
+  13090
+Processing sinfon1
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 29
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+Original:
+  2631
+  2544
+Final:
+  2544
+  2544
+Processing sinfon10
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 33
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  2749
+  2662
+Final:
+  2662
+  2662
+Processing sinfon11
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 40
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 49
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  3657
+  3570
+Final:
+  3570
+  3570
+Processing sinfon12
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 55
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+Original:
+  3554
+  3467
+Final:
+  3467
+  3467
+Processing sinfon13
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 44
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 34
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 31
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+Original:
+  3256
+  3169
+Final:
+  3169
+  3169
+Processing sinfon14
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 56
+ERROR: Note already OFF: 56
+Original:
+  2724
+  2638
+Final:
+  2638
+  2638
+Processing sinfon15
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+Original:
+  2619
+  2533
+Final:
+  2533
+  2533
+Processing sinfon2
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 41
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+Original:
+  3594
+  3508
+Final:
+  3508
+  3508
+Processing sinfon3
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 46
+ERROR: Note already OFF: 46
+Original:
+  2943
+  2857
+Final:
+  2857
+  2857
+Processing sinfon4
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 43
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 36
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+Original:
+  2830
+  2743
+Final:
+  2743
+  2743
+Processing sinfon5
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+Original:
+  4615
+  4517
+Final:
+  4517
+  4517
+Processing sinfon6
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 52
+ERROR: Note already OFF: 48
+ERROR: Note already OFF: 48
+Original:
+  2864
+  2777
+Final:
+  2777
+  2777
+Processing sinfon7
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 38
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 45
+ERROR: Note already OFF: 57
+ERROR: Note already OFF: 57
+Original:
+  3751
+  3664
+Final:
+  3664
+  3664
+Processing sinfon8
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 50
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 53
+ERROR: Note already OFF: 37
+ERROR: Note already OFF: 37
+Original:
+  2578
+  2492
+Final:
+  2492
+  2492
+Processing sinfon9
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 39
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+ERROR: Note already OFF: 51
+Original:
+  4461
+  4374
+Final:
+  4374
+  4374
+Processing sonat-3
+Original:
+  14954
+  14847
+Final:
+  14847
+  14847
+Processing sonat-31
+Original:
+  5207
+  5165
+Final:
+  5165
+  5165
+Processing sonat-32
+Original:
+  2013
+  1926
+Final:
+  1926
+  1926
+Processing sonat-33
+Original:
+  2924
+  2937
+Final:
+  2924
+  2924
+Processing sonat-34
+Original:
+  1494
+  1479
+Final:
+  1479
+  1479
+Processing sonat-35
+Original:
+  2488
+  2531
+Final:
+  2488
+  2488
+Processing sonat-36
+Original:
+  6360
+  6375
+Final:
+  6360
+  6360
+Processing sonat-37
+Original:
+  3212
+  3187
+Final:
+  3187
+  3187
+Processing sonat-38 (1)
+Original:
+  4858
+  4881
+Final:
+  4858
+  4858
+Processing sonat-38
+Original:
+  4858
+  4881
+Final:
+  4858
+  4858
+Processing sonat-39 (1)
+Original:
+  8992
+  8993
+Final:
+  8992
+  8992
+Processing sonat-39
+Original:
+  8992
+  8993
+Final:
+  8992
+  8992
+Processing sonat-4
+Original:
+  6795
+  6727
+Final:
+  6727
+  6727
+Processing sonat-40 (1)
+Original:
+  1826
+  1826
+Final:
+  1826
+  1826
+Processing sonat-40
+Original:
+  1826
+  1826
+Final:
+  1826
+  1826
+Processing sonat-46
+Original:
+  4228
+  4223
+Final:
+  4223
+  4223
+Processing sonat-47
+Original:
+  10123
+  10054
+Final:
+  10054
+  10054
+Processing sonat-48
+Original:
+  8004
+  7918
+Final:
+  7918
+  7918
+Processing sonat-49
+Original:
+  8234
+  8156
+Final:
+  8156
+  8156
+Processing sonat-5
+Original:
+  21096
+  21103
+Final:
+  21096
+  21096
+Processing sonat-50
+Original:
+  8410
+  8385
+Final:
+  8385
+  8385
+Processing sonat-51
+Original:
+  6746
+  6717
+Final:
+  6717
+  6717
+Processing sonat-6
+Original:
+  11772
+  11768
+Final:
+  11768
+  11768
+Processing sonat-66
+Original:
+  12060
+  12133
+Final:
+  12060
+  12060
+Processing sonat-67
+Original:
+  7944
+  7942
+Final:
+  7942
+  7942
+Processing sonat-68
+Original:
+  10370
+  10359
+Final:
+  10359
+  10359
+Processing sonat-69
+Original:
+  9364
+  9321
+Final:
+  9321
+  9321
+Processing sonat-7 (1)
+Original:
+  16773
+  16740
+Final:
+  16740
+  16740
+Processing sonat-7
+Original:
+  8748
+  8725
+Final:
+  8725
+  8725
+Processing sonat-70
+Original:
+  3874
+  3838
+Final:
+  3838
+  3838
+Processing sonat-71
+Original:
+  8448
+  8430
+Final:
+  8430
+  8430
+Processing sonat-72
+Original:
+  13672
+  13640
+Final:
+  13640
+  13640
+Processing sonat-73
+Original:
+  8887
+  8856
+Final:
+  8856
+  8856
+Processing sonat-8
+Original:
+  9612
+  9570
+Final:
+  9570
+  9570
+Processing sonat-9
+Original:
+  8018
+  7983
+Final:
+  7983
+  7983
+Processing sonata (1)
+Original:
+  5020
+  5008
+Final:
+  5008
+  5008
+Processing sonata-1 (1)
+Original:
+  392
+  374
+Final:
+  374
+  374
+Processing sonata-1
+Original:
+  5866
+  5824
+Final:
+  5824
+  5824
+Processing sonata-2
+Original:
+  14620
+  14590
+Final:
+  14590
+  14590
+Processing sonata-3 (1)
+Original:
+  12024
+  12031
+Final:
+  12024
+  12024
+Processing sonata-3
+Original:
+  9048
+  9153
+Final:
+  9048
+  9048
+Processing sonata-4 (1)
+Original:
+  9007
+  8974
+Final:
+  8974
+  8974
+Processing sonata-4
+Original:
+  8202
+  8205
+Final:
+  8202
+  8202
+Processing sonata-5
+Original:
+  16712
+  16687
+Final:
+  16687
+  16687
+Processing sonata-6
+Original:
+  19058
+  19134
+Final:
+  19058
+  19058
+Processing sonata-7
+Original:
+  6916
+  6965
+Final:
+  6916
+  6916
+Processing sonata-8 (1)
+Original:
+  21338
+  21320
+Final:
+  21320
+  21320
+Processing sonata-8
+Original:
+  13049
+  12942
+Final:
+  12942
+  12942
+Processing sonata-9
+Original:
+  11080
+  11057
+Final:
+  11057
+  11057
+Processing sonata
+Original:
+  6084
+  6263
+Final:
+  6084
+  6084
+Processing sonata_ (1)
+Original:
+  10342
+  10257
+Final:
+  10257
+  10257
+Processing sonata_ (2)
+Original:
+  6704
+  6697
+Final:
+  6697
+  6697
+Processing sonata_
+Original:
+  15578
+  15616
+Final:
+  15578
+  15578
+Processing sonata_1
+Original:
+  13598
+  13532
+Final:
+  13532
+  13532
+Processing sonata_1_1_(c)iscenko
+Original:
+  5207
+  5165
+Final:
+  5165
+  5165
+Processing sonata_1_2_(c)iscenko
+Original:
+  2013
+  1926
+Final:
+  1926
+  1926
+Processing sonata_1_3_(c)iscenko
+Original:
+  2924
+  2937
+Final:
+  2924
+  2924
+Processing sonata_1_4_(c)iscenko
+Original:
+  1494
+  1479
+Final:
+  1479
+  1479
+Processing sonata_2 (1)
+Original:
+  18684
+  18655
+Final:
+  18655
+  18655
+Processing sonata_2 (2)
+Original:
+  18615
+  18537
+Final:
+  18537
+  18537
+Processing sonata_2
+Original:
+  14334
+  14377
+Final:
+  14334
+  14334
+Processing sonata_3
+Original:
+  21267
+  21216
+Final:
+  21216
+  21216
+Processing var1
+Original:
+  3762
+  3702
+Final:
+  3702
+  3702
+Processing var10
+Original:
+  4812
+  4761
+Final:
+  4761
+  4761
+Processing var11
+Original:
+  2449
+  2434
+Final:
+  2434
+  2434
+Processing var12c4
+Original:
+  5923
+  5923
+Final:
+  5923
+  5923
+Processing var13
+Original:
+  9195
+  9205
+Final:
+  9195
+  9195
+Processing var14
+Original:
+  2684
+  2610
+Final:
+  2610
+  2610
+Processing var15c5
+Original:
+  11963
+  12125
+Final:
+  11963
+  11963
+Processing var16
+Original:
+  7553
+  7558
+Final:
+  7553
+  7553
+Processing var17
+Original:
+  2330
+  2254
+Final:
+  2254
+  2254
+Processing var18c6
+Original:
+  4497
+  4444
+Final:
+  4444
+  4444
+Processing var19
+Original:
+  2744
+  2767
+Final:
+  2744
+  2744
+Processing var2
+Original:
+  2857
+  2841
+Final:
+  2841
+  2841
+Processing var20
+Original:
+  2433
+  2361
+Final:
+  2361
+  2361
+Processing var21c7
+Original:
+  6288
+  6393
+Final:
+  6288
+  6288
+Processing var22
+Original:
+  2032
+  1959
+Final:
+  1959
+  1959
+Processing var23
+Original:
+  2232
+  2156
+Final:
+  2156
+  2156
+Processing var24c8
+Original:
+  3187
+  3164
+Final:
+  3164
+  3164
+Processing var25
+Original:
+  17000
+  17263
+Final:
+  17000
+  17000
+Processing var26
+Original:
+  2843
+  2841
+Final:
+  2841
+  2841
+Processing var27c9
+Original:
+  5486
+  5489
+Final:
+  5486
+  5486
+Processing var28
+Original:
+  2843
+  2840
+Final:
+  2840
+  2840
+Processing var29
+Original:
+  4984
+  5150
+Final:
+  4984
+  4984
+Processing var30
+Original:
+  5116
+  14074
+Final:
+  5116
+  5116
+Processing var3c1
+Original:
+  2843
+  2842
+Final:
+  2842
+  2842
+Processing var4
+Original:
+  3415
+  3427
+Final:
+  3415
+  3415
+Processing var5
+Original:
+  3469
+  3452
+Final:
+  3452
+  3452
+Processing var6c2
+Original:
+  2154
+  2131
+Final:
+  2131
+  2131
+Processing var7
+Original:
+  3187
+  3196
+Final:
+  3187
+  3187
+Processing var8
+Original:
+  2567
+  2556
+Final:
+  2556
+  2556
+Processing var9c3
+Original:
+  2843
+  2840
+Final:
+  2840
+  2840 to go next
+- No recurrent aspect of the model yet
+- improve audio features
+- tinker with the parameters
+
