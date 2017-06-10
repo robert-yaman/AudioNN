@@ -2,4 +2,8 @@ build
 *.pyc
 .coverage
 .*.sw?
-data/*.csv
+data/training_data/*
+data/training_labels/*
+data/validation_data/*
+data/validation_labels/*
+practice/*
