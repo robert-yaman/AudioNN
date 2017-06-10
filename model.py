@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy
 
-from tensorflow.python import debug as tf_debug
 
 # TODO: make number of MFCC units a parameter, since we will likely change
 def _variable_summaries(var):
