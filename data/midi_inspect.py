@@ -2,53 +2,11 @@ import midi
 import sys
 import os
 import copy
-import argparse 
+import argparse
 
-# currently mutates
-# This algorithm doesn't generalize
-'''
-def patternWithOneNoteTrackFromPattern(pattern):
-  # Takes a MIDI track with multiple note tracks (e.g. for a Bach fugue) and combines them. Returns a pattern with the unified track
-
-  note_tracks = []
-  for track in pattern:
-    if type(track[0]) == midi.TextMetaEvent:
-      note_tracks.append(track)
-
-  final_track = midi.Track()
-  meta = midi.TextMetaEvent(tick=0, text='final', data=[49])
-  final_track.append(meta)
-
-  track_abs_times = {}
-  for track in note_tracks:
-      track_abs_times[track[0].text] = 0 #TODO:confirm these are always unique 
-  total_time = 0
-  # get rid of the meta event tag in each tr ack
-  # close - also end of track event
-  while any([len(track) > 1 for track in note_tracks]):
-    track_with_next_event = None
-    best_score = float('inf') # we want low scores
-    for itr_track in note_tracks:
-      if len(itr_track) > 1:
-        if track_with_next_event == None or track_abs_times[itr_track[0].text] + itr_track[1].tick < best_score:
-          track_with_next_event = itr_track
-          best_score = track_abs_times[itr_track[0].text] + itr_track[1].tick
-    # 0'th index is the meta event
-    next_event = track_with_next_event.pop(1) # this would be more efficient if we went backwards
-
-    track_abs_times[track_with_next_event[0].text] += next_event.tick
-    if type(next_event) == midi.NoteOnEvent or type(next_event) == midi.NoteOffEvent:
-      next_event.tick = track_abs_times[track_with_next_event[0].text] - total_time
-      final_track.append(next_event)
-    total_time = track_abs_times[track_with_next_event[0].text]
-
-  # Preserve metadata on track and tempo track.
-  while len(pattern) > 1:
-    pattern.pop()
-
-  pattern.append(final_track)
-  return pattern
-'''
+# Difference between the MIDI value of a note and the piano value (lowest A is
+# 0).
+MIDI_OFFSET = 21
 
 def noteTrackForPattern(pattern):
     pattern.make_ticks_abs()
@@ -189,7 +147,7 @@ def labelsForNoteTrack(pattern, interval=23217, verbose=False):
                     type(next_note_event) == midi.NoteOffEvent):
                 continue
 
-            pitch = next_note_event.get_pitch() - 21
+            pitch = next_note_event.get_pitch() - MIDI_OFFSET
             if type(next_note_event) == midi.NoteOnEvent:
                 # Sometimes two NoteOnEvents represent an On/Off pair.
                 current_notes[pitch] = 1 - current_notes[pitch]
@@ -225,10 +183,66 @@ def labelsForPath(path, verbose=False):
     pattern = midi.read_midifile(path)
     return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose)
 
+# Two bugs: Too many note ON events, Doesn't play in GB
+def midiFromLabels(labels, interval=23217):
+    """Method to take output of our system and create a MIDI file we can put
+    through a synthesizer. |labels| is a list of 1x88 matricies of one hot
+    encodings of possible notes. Intervals is the number of microseconds
+    between each encoding.
+
+    returns Midi track. For now tempo is 60 bpm in all cases.
+    """
+    # Default resolution 220.
+    pattern = midi.Pattern(tick_relative=False)
+    tempo_track = midi.Track(tick_relative=False)
+    tempo_event = midi.SetTempoEvent(tick=0, bpm=60)
+    tempo_track.append(tempo_event)
+    pattern.append(tempo_track)
+    # Don't create a tempo track for now - use all defaults.
+    note_track = midi.Track(tick_relative=False)
+
+    pattern.append(note_track)
+    # Hash set
+    currently_on_notes = {}
+
+    def recordChangeAtIndex(index, tick):
+        midi_index = index + MIDI_OFFSET
+        if currently_on_notes.get(index, False):
+            event = midi.NoteOffEvent
+        else:
+            event = midi.NoteOnEvent
+        note_track.append(event(tick=tick, pitch=midi_index, velocity=64))
+        currently_on_notes[index] = not currently_on_notes.get(index,
+            False)
+
+    def tickFromTime(time):
+        # |time| in microseconds.
+        ticks_per_sec = 220.0
+        ticks_per_microsecs = ticks_per_sec / 1000000
+        return int(ticks_per_microsecs * time)
+
+    current_time = 0
+    for label in labels:
+        current_time += interval
+        for index, value in enumerate(label):
+            if currently_on_notes.get(index, False) != value:
+                recordChangeAtIndex(index, tickFromTime(current_time))
+
+    final_tick = note_track[-1].tick
+    note_track.append(midi.EndOfTrackEvent(tick=final_tick))
+    tempo_track.append(midi.EndOfTrackEvent(tick=final_tick))
+
+    pattern.make_ticks_rel()
+    return pattern
+
 if __name__ == "__main__":
     midi_path = sys.argv[1]
-    pattern =midi.read_midifile(midi_path)
+    #pattern =midi.read_midifile(midi_path)
     #print pattern
     #midi.write_midifile("example.mid", pattern)
     #print(noteTrackForPattern(pattern))
-    print labelsForPath(midi_path, verbose=True)
+    #print labelsForPath(midi_path, verbose=True)
+    pattern = midiFromLabels(labelsForPath(midi_path))
+    print pattern
+    midi.write_midifile("/tmp/test_midi.mid", pattern)
+    print "Done"
