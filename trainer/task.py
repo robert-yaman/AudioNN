@@ -11,12 +11,6 @@ VALIDATION_LABELS = DATA_DIR + 'validation_labels/validation_labels.csv'
 
 BATCH_SIZE = 50
 
-def file_len(fname):
-    with open(fname) as f:
-        for i, l in enumerate(f):
-            pass
-    return i + 1
-
 def _get_data(validation=False):
     with tf.name_scope('get_data'):
         data_reader = tf.TextLineReader()
