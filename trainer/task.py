@@ -125,8 +125,9 @@ def main(argv=None):
 
     summary = tf.summary.merge_all()
     with tf.Session() as sess:
-        train_writer = tf.summary.FileWriter('/tmp/tensorboard/train', sess.graph)
-        test_writer = tf.summary.FileWriter('/tmp/tensorboard/test')
+        tb_path = '/tmp/tensorboard/' if local else 'gs://audionn-data/tensorboard/'
+        train_writer = tf.summary.FileWriter(tb_path + 'train', sess.graph)
+        test_writer = tf.summary.FileWriter(tb_path + 'test')
 
         if "debug" in argv:
             sess = tf_debug.LocalCLIDebugWrapperSession(sess)
@@ -138,16 +139,17 @@ def main(argv=None):
         # Start imperative steps.
         threads = tf.train.start_queue_runners(coord=coord)
         num_epochs = _get_file_len(_training_data_path(local)) / BATCH_SIZE
+        print "BEGINNING TRANING"
         step = 0
         while step < num_epochs and not coord.should_stop():
             step += 1
-            print "Step: %d" % step
             if step % 1000 == 0:
                 loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
-                print('Step: %d\n    Loss: %f' %(step, loss_val))
+                print('Step: %d    Loss: %f' %(step, loss_val))
                 train_writer.add_summary(summary_val, step)
             _, summary_val = sess.run([training_step, summary],
                     feed_dict={keep_prob:0.5})
+            print "GOT SUMMARY"
             test_writer.add_summary(summary_val, step)
         print("DONE TRAINING")
         coord.request_stop()
