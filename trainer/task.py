@@ -127,7 +127,7 @@ def main(argv=None):
     with tf.Session() as sess:
         tb_path = '/tmp/tensorboard/' if local else 'gs://audionn-data/tensorboard/'
         train_writer = tf.summary.FileWriter(tb_path + 'train', sess.graph)
-        test_writer = tf.summary.FileWriter(tb_path + 'test')
+        test_writer = tf.summary.FileWriter(tb_path + 'test', sess.graph)
 
         if "debug" in argv:
             sess = tf_debug.LocalCLIDebugWrapperSession(sess)
@@ -149,7 +149,6 @@ def main(argv=None):
                 train_writer.add_summary(summary_val, step)
             _, summary_val = sess.run([training_step, summary],
                     feed_dict={keep_prob:0.5})
-            print "GOT SUMMARY"
             test_writer.add_summary(summary_val, step)
         print("DONE TRAINING")
         coord.request_stop()
