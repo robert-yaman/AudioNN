@@ -3,27 +3,40 @@ import tensorflow as tf
 
 from tensorflow.python import debug as tf_debug
 
+"""
 DATA_DIR = 'data/'
 TRAINING_DATA = DATA_DIR + 'training_data/training_data.csv'
 TRAINING_LABELS = DATA_DIR + 'training_labels/training_labels.csv'
 VALIDATION_DATA = DATA_DIR + 'validation_data/validation_data.csv'
 VALIDATION_LABELS = DATA_DIR + 'validation_labels/validation_labels.csv'
+"""
+DATA_DIR = 'gs://audionn-data/'
+TRAINING_DATA = DATA_DIR + 'training_data.csv'
+TRAINING_LABELS = DATA_DIR + 'training_labels.csv'
+VALIDATION_DATA = DATA_DIR + 'validation_data.csv'
+VALIDATION_LABELS = DATA_DIR + 'validation_labels.csv'
 
 BATCH_SIZE = 50
+
+def get_file_len(path):
+    with open(path, 'rb') as f:
+        for i,l in enumerate(f):
+            pass
+    return i
 
 def _get_data(validation=False):
     with tf.name_scope('get_data'):
         data_reader = tf.TextLineReader()
-        feature_file = tf.train.string_input_producer([VALIDATIOIN_DATA if validation else
-                TRAINING_DATA])
+        feature_file = tf.train.string_input_producer([VALIDATION_DATA if
+            validation else TRAINING_DATA])
         _, csv_row = data_reader.read(feature_file)
         record_defaults = [[0.0]] * 20
         features = tf.stack(list(tf.decode_csv(csv_row,
             record_defaults=record_defaults)))
 
         label_reader = tf.TextLineReader()
-        labels_file = tf.train.string_input_producer([VALIDATION_LABELS if validation else
-                TRAINING_LABELS])
+        label_path = VALIDATION_LABELS if validation else TRAINING_LABELS
+        labels_file = tf.train.string_input_producer([label_path])
         _, csv_row = label_reader.read(labels_file)
         record_defaults = [[0]] * 88
         labels = tf.stack(list(tf.decode_csv(csv_row,
@@ -67,6 +80,7 @@ def main(argv=None):
     with tf.name_scope('accuracy'):
         with tf.name_scope('predictions'):
             # For each note, did it get the right prediction?
+                # Should be >90% if it just predicts all 0s.
             correct_predictions7 = tf.cast(tf.equal(interpretation(readout,
                 0.7), label_batch), tf.float32)
             correct_predictions5 = tf.cast(tf.equal(interpretation(readout,
@@ -104,27 +118,25 @@ def main(argv=None):
             sess.add_tensor_filter("has_inf_or_nan", tf_debug.has_inf_or_nan)
 
         sess.run(tf.global_variables_initializer())
+        sess.run(tf.local_variables_initializer())
         coord = tf.train.Coordinator()
-        # Start imperative step.
+        # Start imperative steps.
         threads = tf.train.start_queue_runners(coord=coord)
-        try:
-            step = 0
-            while not coord.should_stop():
-                step += 1
-                print "Step: %d" % step
-                if step % 1000 == 0:
-                    loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
-                    print('Step: %d\n    Loss: %f' %(step, loss_val))
-                    train_writer.add_summary(summary_val, step)
-                else:
-                    _, summary_val = sess.run([training_step, summary],
-                            feed_dict={keep_prob:0.5})
-                    test_writer.add_summary(summary_val, step)
-        except tf.errors.OutOfRangeError:
-            print("DONE TRAINING")
-        finally:
-            coord.request_stop()
-            coord.join(threads)
+        num_epochs = get_file_len(TRAINING_DATA) / BATCH_SIZE
+        step = 0
+        while step < num_epochs and not coord.should_stop():
+            step += 1
+            print "Step: %d" % step
+            if step % 1000 == 0:
+                loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
+                print('Step: %d\n    Loss: %f' %(step, loss_val))
+                train_writer.add_summary(summary_val, step)
+            _, summary_val = sess.run([training_step, summary],
+                    feed_dict={keep_prob:0.5})
+            test_writer.add_summary(summary_val, step)
+        print("DONE TRAINING")
+        coord.request_stop()
+        coord.join(threads)
 
 if __name__ == '__main__':
    tf.app.run()
