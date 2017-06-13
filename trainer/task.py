@@ -3,40 +3,54 @@ import tensorflow as tf
 
 from tensorflow.python import debug as tf_debug
 
-"""
-DATA_DIR = 'data/'
-TRAINING_DATA = DATA_DIR + 'training_data/training_data.csv'
-TRAINING_LABELS = DATA_DIR + 'training_labels/training_labels.csv'
-VALIDATION_DATA = DATA_DIR + 'validation_data/validation_data.csv'
-VALIDATION_LABELS = DATA_DIR + 'validation_labels/validation_labels.csv'
-"""
-DATA_DIR = 'gs://audionn-data/'
-TRAINING_DATA = DATA_DIR + 'training_data.csv'
-TRAINING_LABELS = DATA_DIR + 'training_labels.csv'
-VALIDATION_DATA = DATA_DIR + 'validation_data.csv'
-VALIDATION_LABELS = DATA_DIR + 'validation_labels.csv'
-
 BATCH_SIZE = 50
 
-def get_file_len(path):
+def _data_dir(local):
+    return 'data/' if local else 'gs://audionn-data/'
+
+def _training_data_path(local):
+    file_name = 'training_data/training_data.csv' if local else 'training_data.csv'
+    return _data_dir(local) + file_name
+
+def _training_labels_path(local):
+    file_name = 'training_labels/training_labels.csv' if local else 'training_labels.csv'
+    return _data_dir(local) + file_name
+
+def _validation_data_path(local):
+    file_name = 'validation_data/validation_data.csv' if local else 'validation_data.csv'
+    return _data_dir(local) + file_name
+
+def _validation_labels_path(local):
+    file_name = 'validation_labels/validation_labels.csv' if local else 'validation_labels.csv'
+    return _data_dir(local) + file_name
+
+def _get_file_len(path):
+    """
     with open(path, 'rb') as f:
         for i,l in enumerate(f):
             pass
     return i
+    """
+    # Can't read file len since stored in GS - find another way
+    return 2800000
 
-def _get_data(validation=False):
+def _get_data(local, validation=False):
     with tf.name_scope('get_data'):
         data_reader = tf.TextLineReader()
-        feature_file = tf.train.string_input_producer([VALIDATION_DATA if
-            validation else TRAINING_DATA])
+        if validation:
+            feature_file = tf.train.string_input_producer([_validation_data_path(local)])
+        else:
+            feature_file = tf.train.string_input_producer([_training_data_path(local)])
         _, csv_row = data_reader.read(feature_file)
         record_defaults = [[0.0]] * 20
         features = tf.stack(list(tf.decode_csv(csv_row,
             record_defaults=record_defaults)))
 
         label_reader = tf.TextLineReader()
-        label_path = VALIDATION_LABELS if validation else TRAINING_LABELS
-        labels_file = tf.train.string_input_producer([label_path])
+        if validation:
+            labels_file = tf.train.string_input_producer([_validation_labels_path(local)])
+        else:
+            labels_file = tf.train.string_input_producer([_training_labels_path(local)])
         _, csv_row = label_reader.read(labels_file)
         record_defaults = [[0]] * 88
         labels = tf.stack(list(tf.decode_csv(csv_row,
@@ -44,8 +58,8 @@ def _get_data(validation=False):
 
         return features, labels
 
-def input_pipeline(validation=False):
-    example, label = _get_data(validation=validation)
+def input_pipeline(local, validation=False):
+    example, label = _get_data(local, validation=validation)
     min_after_dequeue = 10000
     capacity = min_after_dequeue + 3 * BATCH_SIZE
     example_batch, label_batch = tf.train.shuffle_batch(
@@ -55,7 +69,8 @@ def input_pipeline(validation=False):
     return example_batch, label_batch
 
 def main(argv=None):
-    example_batch, label_batch = input_pipeline()
+    local = "--local" in argv
+    example_batch, label_batch = input_pipeline(local)
     readout, keep_prob = model.get_transcription_model(example_batch)
 
     # Don't use softmax since the outputs aren't mutually exclusive.
@@ -122,7 +137,7 @@ def main(argv=None):
         coord = tf.train.Coordinator()
         # Start imperative steps.
         threads = tf.train.start_queue_runners(coord=coord)
-        num_epochs = get_file_len(TRAINING_DATA) / BATCH_SIZE
+        num_epochs = _get_file_len(_training_data_path(local)) / BATCH_SIZE
         step = 0
         while step < num_epochs and not coord.should_stop():
             step += 1
