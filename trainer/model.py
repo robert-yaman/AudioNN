@@ -1,6 +1,10 @@
 import tensorflow as tf
 import numpy
 
+NUM_FILTERS_FIRST_LAYER = 24
+NUM_FILTERS_SECOND_LAYER = 48
+NUM_FC_NODES = 612
+
 
 # TODO: make number of MFCC units a parameter, since we will likely change
 def _variable_summaries(var):
@@ -42,7 +46,7 @@ def get_transcription_model(examples):
         x = tf.cast(tf.expand_dims(examples, -1), tf.float32)
 
     with tf.name_scope('first_conv'):
-        num_filters1 = 32
+        num_filters1 = NUM_FILTERS_FIRST_LAYER
         weight_vars1 = weight_variables([3,1,num_filters1])
         bias_vars1 = bias_variables([num_filters1])
 
@@ -50,7 +54,7 @@ def get_transcription_model(examples):
         pool1 = pooling_layer(conv1)
 
     with tf.name_scope('second_conv'):
-        num_filters2 = 64
+        num_filters2 = NUM_FILTERS_SECOND_LAYER
         weight_vars2 = weight_variables([3,num_filters1,num_filters2])
         bias_vars2 = bias_variables([num_filters2])
 
@@ -58,7 +62,7 @@ def get_transcription_model(examples):
         pool2 = pooling_layer(conv2)
 
     with tf.name_scope('fc_layer'):
-        num_nodes3 = 1024
+        num_nodes3 = NUM_FC_NODES 
         # MFCC will be 5 after two pooling layers
         total_nodes = 5 *  num_filters2
         weight_vars3 = weight_variables([total_nodes, num_nodes3])
