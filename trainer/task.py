@@ -1,3 +1,9 @@
+'''
+Possible flags:
+    - "--debug": runs in tf debugger.
+    - "--local" signifies training is running on local CPU.
+'''
+
 import model
 import tensorflow as tf
 
@@ -129,7 +135,7 @@ def main(argv=None):
         train_writer = tf.summary.FileWriter(tb_path + 'train', sess.graph)
         test_writer = tf.summary.FileWriter(tb_path + 'test', sess.graph)
 
-        if "debug" in argv:
+        if "--debug" in argv:
             sess = tf_debug.LocalCLIDebugWrapperSession(sess)
             sess.add_tensor_filter("has_inf_or_nan", tf_debug.has_inf_or_nan)
 
