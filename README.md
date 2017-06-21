@@ -52,3 +52,13 @@ Therefore, I would not be surprised if the model was very poor at recognizing lo
 - Tweak parameters to the model and record difference
 - Add a recurrent aspect to the model
 - Find better audio features
+
+### Results
+
+[Loss](https://www.dropbox.com/s/p4poy6nzwyqzpmc/Screenshot%202017-06-13%2015.57.59.png?dl=0)
+
+## 6/20/17 Second Version
+
+Changes:
+- Lower learning rate
+- Fix a couple of bugs in implementation

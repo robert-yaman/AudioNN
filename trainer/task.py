@@ -105,11 +105,11 @@ def main(argv=None):
 
             # Did it get the right prediction for every note? Look if the
             # min value is 1.
-            correct_prediction7 = tf.equal(tf.argmin(correct_predictions7,
+            correct_prediction7 = tf.equal(tf.reduce_min(correct_predictions7,
                 1),1)
-            correct_prediction5 = tf.equal(tf.argmin(correct_predictions5,
+            correct_prediction5 = tf.equal(tf.reduce_min(correct_predictions5,
                 1),1)
-            correct_prediction9 = tf.equal(tf.argmin(correct_predictions9,
+            correct_prediction9 = tf.equal(tf.reduce_min(correct_predictions9,
                 1),1)
 
         accuracy7 = tf.reduce_mean(tf.cast(correct_prediction7,
