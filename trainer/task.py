@@ -84,7 +84,7 @@ def main(argv=None):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
                 logits=readout))
         tf.summary.scalar('loss', loss)
-        training_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
+        training_step = tf.train.AdamOptimizer(5e-5).minimize(loss)
 
     def interpretation(logit, cutoff):
         # Returns a tensor that represents how we are interpreting the output
