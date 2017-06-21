@@ -30,8 +30,7 @@ This convolutional structure was created for image recognition, so it likely not
 
 ### Parameters
 
-- Number of training examples: TODO
-- Number of validation examples:
+- Validation ratio: 5%
 - Batch Size: 50
 - Learning rate: Adam
 - Filters in first convolutional layer: 32
