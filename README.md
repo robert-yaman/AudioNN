@@ -32,7 +32,7 @@ This convolutional structure was created for image recognition, so it likely not
 
 - Validation ratio: 5%
 - Batch Size: 50
-- Learning rate: Adam
+- Learning rate: Adam .0001
 - Filters in first convolutional layer: 32
 - Filters in second convolutional layer: 64
 - Fully connected nodes: 1024
@@ -61,3 +61,14 @@ Therefore, I would not be surprised if the model was very poor at recognizing lo
 Changes:
 - Lower learning rate
 - Fix a couple of bugs in implementation
+- Lower power of model
+
+### Parameters
+
+- Validation ratio: 5%
+- Batch Size: 50
+- Learning rate: Adam .00005
+- Filters in first convolutional layer: 24
+- Filters in second convolutional layer: 48
+- Fully connected nodes: 612
+- Dropout in FC layer while training: 50%
