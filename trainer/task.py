@@ -100,13 +100,14 @@ def main(argv=None):
     # exactly right. We can revisit this later.
     with tf.name_scope('accuracy'):
         with tf.name_scope('predictions'):
+            sigmoid = tf.sigmoid(readout)
             # For each note, did it get the right prediction?
                 # Should be >90% if it just predicts all 0s.
-            correct_predictions7 = tf.cast(tf.equal(interpretation(readout,
+            correct_predictions7 = tf.cast(tf.equal(interpretation(sigmoid,
                 0.7), label_batch), tf.float32)
-            correct_predictions5 = tf.cast(tf.equal(interpretation(readout,
+            correct_predictions5 = tf.cast(tf.equal(interpretation(sigmoid,
                 0.5), label_batch), tf.float32)
-            correct_predictions9 = tf.cast(tf.equal(interpretation(readout,
+            correct_predictions9 = tf.cast(tf.equal(interpretation(sigmoid,
                 0.9), label_batch), tf.float32)
 
             # Did it get the right prediction for every note? Look if the
