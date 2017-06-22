@@ -83,6 +83,6 @@ def get_transcription_model(examples):
         bias_vars4 = bias_variables([88])
 
         readout = tf.matmul(fc_layer_dropout, weight_vars4) + bias_vars4
-        tf.summary.histogram('histogram', readout)
+        tf.summary.histogram('histogram', tf.sigmoid(readout))
 
     return readout, keep_prob
