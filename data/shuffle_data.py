@@ -10,10 +10,7 @@ TMP_DATA = '/tmp/data_tmp.csv'
 TMP_LABELS = '/tmp/labels_tmp.csv'
 
 def file_len(f):
-    with open(f, 'rb'):
-        for i,l in enumerate(f):
-            pass
-        return i
+    return sum(1 for line in open(f))
 
 def shuffle_data(training_data_csv=TRAINING_DATA_CSV,
         training_labels_csv=TRAINING_LABELS_CSV,
@@ -39,19 +36,17 @@ def shuffle_data(training_data_csv=TRAINING_DATA_CSV,
                         #data_writer = csv.writer(tmp_data)
                         #labels_writer = csv.writer(tmp_labels)
 
-                        shuffled_indices = random.shuffle(list(range(file_len(data_file))))
-                        for index in shuffled_indicies:
+                        shuffled_indices = list(range(file_len(data)))
+                        random.shuffle(shuffled_indices)
+                        for index in shuffled_indices:
                             tmp_data.write(data_lines[index])
                             tmp_labels.write(labels_lines[index])
 
                         os.system("rm %s" % data)
                         os.system("rm %s" % labels)
-                        os.system("mv %s %s" % TMP_DATA, data)
-                        os.system("mv %s %s" % TMP_LABELS, labels)
+                        os.system("mv %s %s" %(TMP_DATA, data))
+                        os.system("mv %s %s" %(TMP_LABELS, labels))
 
 
 if __name__ == "__main__":
-    shuffle_data(training_data_csv="td.csv",
-            training_labels_csv="tl.csv",
-            validation_data_csv="vd.csv",
-            validation_labels_csv="vl.csv")
+    shuffle_data()
