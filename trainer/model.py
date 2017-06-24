@@ -23,7 +23,7 @@ def _variable_summaries(var):
 def get_transcription_model(examples):
     def weight_variables(shape):
         with tf.name_scope('weights'):
-            initial = tf.truncated_normal(shape, stddev=.01)
+            initial = tf.truncated_normal(shape, stddev=.1)
             variables = tf.Variable(initial)
             _variable_summaries(variables)
             return variables
@@ -62,7 +62,7 @@ def get_transcription_model(examples):
         pool2 = pooling_layer(conv2)
 
     with tf.name_scope('fc_layer'):
-        num_nodes3 = NUM_FC_NODES 
+        num_nodes3 = NUM_FC_NODES
         # MFCC will be 5 after two pooling layers
         total_nodes = 5 *  num_filters2
         weight_vars3 = weight_variables([total_nodes, num_nodes3])

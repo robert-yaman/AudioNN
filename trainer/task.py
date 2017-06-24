@@ -84,7 +84,7 @@ def main(argv=None):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
                 logits=readout))
         tf.summary.scalar('loss', loss)
-        training_step = tf.train.AdamOptimizer(5e-5).minimize(loss)
+        training_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
 
     def interpretation(logit, cutoff):
         # Returns a tensor that represents how we are interpreting the output
@@ -150,13 +150,13 @@ def main(argv=None):
         step = 0
         while step < num_epochs and not coord.should_stop():
             step += 1
-            if step % 1000 == 0:
-                loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
-                print('Step: %d    Loss: %f' %(step, loss_val))
-                train_writer.add_summary(summary_val, step)
             _, summary_val = sess.run([training_step, summary],
                     feed_dict={keep_prob:0.5})
-            test_writer.add_summary(summary_val, step)
+            if step % 1000 == 0:
+                train_writer.add_summary(summary_val, step)
+                loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
+                print('Step: %d    Loss: %f' %(step, loss_val))
+                test_writer.add_summary(summary_val, step)
         print("DONE TRAINING")
         coord.request_stop()
         coord.join(threads)
