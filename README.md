@@ -56,7 +56,7 @@ Therefore, I would not be surprised if the model was very poor at recognizing lo
 
 [Loss](https://www.dropbox.com/s/p4poy6nzwyqzpmc/Screenshot%202017-06-13%2015.57.59.png?dl=0)
 
-## 6/20/17 Second Version
+## 6/20/17
 
 Changes:
 - Lower learning rate
@@ -77,10 +77,36 @@ Changes:
 ### Results
 
 [Training Loss](https://www.dropbox.com/s/jehipn9u4at2d2f/Screenshot%202017-06-23%2016.54.44.png?dl=0)
+
 [Test Loss](https://www.dropbox.com/s/iyxa09bt3ip7o0r/Screenshot%202017-06-23%2016.56.51.png?dl=0)
 
 ### Notes
 
 The [Readout](https://www.dropbox.com/s/4utfbbr7bag79we/Screenshot%202017-06-23%2017.01.47.png?dl=0) never gets above about .15. This means that the model is never very confident that it is hearing a particular note. We want our model to be at least 50% confident that a note is present before we consider it to be present.
 
-The test loss starts at about .1, which is very low, and drops only about .03 over the course of training. The initial loss is so low because our input data is very sparse, and the model begins be predicting all notes as 0.
+The test loss starts at about .1, which is very low, and drops only about .03 over the course of training. The initial loss is so low because our input data is very sparse, and the model begins be predicting all notes as 0. 
+
+According to a (N Boulanger-Lewandowski, Y Bengio, P Vincent , 2012)[http://www-etud.iro.umontreal.ca/~boulanni/ICML2012.pdf] paper, initializion strategies can play a big part in overall performance, so maybe a new initialization strategy is needed.
+
+## 6/24/17
+
+Changes:
+- bringing learning rate back up
+- greatly lower batch size
+- increase stdev of normal distribution initial weights are sampled from (.01 to .5)
+
+### Parameters
+
+- Validation ratio: 5%
+- Batch Size: 20
+- Learning rate: Adam .0001
+- Filters in first convolutional layer: 24
+- Filters in second convolutional layer: 48
+- Fully connected nodes: 612
+- Dropout in FC layer while training: 50%
+- Stdev of normal distribution initial weights are samples from: .5
+
+### Results
+
+[Training Loss](https://www.dropbox.com/s/1s07plcgw5ypjom/Screenshot%202017-06-24%2016.27.45.png?dl=0)
+[Test Loss](https://www.dropbox.com/s/08pwmwjamktpmv9/Screenshot%202017-06-24%2016.29.23.png?dl=0)
