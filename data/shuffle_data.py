@@ -27,14 +27,10 @@ def shuffle_data(training_data_csv=TRAINING_DATA_CSV,
             with open(labels, 'rb') as labels_file:
                 with open(TMP_DATA, 'ab') as tmp_data:
                     with open(TMP_LABELS, 'ab') as tmp_labels:
-                        #data_reader = csv.reader(data_file)
-                        #labels_reader = csv.reader(labels_file)
-                        # Is this terrible? Could only load one file into
+                        # Is there a non-terrible way? Could only load one file into
                         # memory at a time.
                         data_lines = data_file.readlines()
                         labels_lines = labels_file.readlines()
-                        #data_writer = csv.writer(tmp_data)
-                        #labels_writer = csv.writer(tmp_labels)
 
                         shuffled_indices = list(range(file_len(data)))
                         random.shuffle(shuffled_indices)

@@ -86,7 +86,6 @@ def labelsForNoteTrack(pattern, interval=23217, verbose=False):
     #
     # Assumption: the first track of |pattern| contains only tempo changes. The
     # second track of pattern contains only noteOn and noteOff events.
-    #pattern.make_ticks_abs()
 
     answer  = []
     time_per_tick = 0
@@ -183,7 +182,6 @@ def labelsForPath(path, verbose=False):
     pattern = midi.read_midifile(path)
     return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose)
 
-# Two bugs: Too many note ON events, Doesn't play in GB
 def midiFromLabels(labels, interval=23217):
     """Method to take output of our system and create a MIDI file we can put
     through a synthesizer. |labels| is a list of 1x88 matricies of one hot
@@ -237,11 +235,6 @@ def midiFromLabels(labels, interval=23217):
 
 if __name__ == "__main__":
     midi_path = sys.argv[1]
-    #pattern =midi.read_midifile(midi_path)
-    #print pattern
-    #midi.write_midifile("example.mid", pattern)
-    #print(noteTrackForPattern(pattern))
-    #print labelsForPath(midi_path, verbose=True)
     pattern = midiFromLabels(labelsForPath(midi_path))
     print pattern
     midi.write_midifile("/tmp/test_midi.mid", pattern)
