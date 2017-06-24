@@ -9,7 +9,7 @@ import tensorflow as tf
 
 from tensorflow.python import debug as tf_debug
 
-BATCH_SIZE = 50
+BATCH_SIZE = 20
 
 def _data_dir(local):
     return 'data/' if local else 'gs://audionn-data/'
