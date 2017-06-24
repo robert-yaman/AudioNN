@@ -62,6 +62,7 @@ Changes:
 - Lower learning rate
 - Fix a couple of bugs in implementation
 - Lower power of model
+- Randomize order of data set
 
 ### Parameters
 
@@ -72,3 +73,14 @@ Changes:
 - Filters in second convolutional layer: 48
 - Fully connected nodes: 612
 - Dropout in FC layer while training: 50%
+
+### Results
+
+[Training Loss](https://www.dropbox.com/s/jehipn9u4at2d2f/Screenshot%202017-06-23%2016.54.44.png?dl=0)
+[Test Loss](https://www.dropbox.com/s/iyxa09bt3ip7o0r/Screenshot%202017-06-23%2016.56.51.png?dl=0)
+
+### Notes
+
+The [Readout](https://www.dropbox.com/s/4utfbbr7bag79we/Screenshot%202017-06-23%2017.01.47.png?dl=0) never gets above about .15. This means that the model is never very confident that it is hearing a particular note. We want our model to be at least 50% confident that a note is present before we consider it to be present.
+
+The test loss starts at about .1, which is very low, and drops only about .03 over the course of training. The initial loss is so low because our input data is very sparse, and the model begins be predicting all notes as 0.
