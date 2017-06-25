@@ -4,14 +4,13 @@ import os
 import copy
 import argparse
 
-######
-# NOTE: audio files sampled at rate of 22050 by default in librosa. Change that
-# here too?
-#####
-
 # Difference between the MIDI value of a note and the piano value (lowest A is
 # 0).
 MIDI_OFFSET = 21
+# 512 is default number of samples in a column of the STFT, 22050 is the
+# default number of samples per second. Multiply by 1000000 to convert to
+# microseconds.
+DEFAULT_INTERVAL = 512 / 22050.0 * 1000000
 
 def noteTrackForPattern(pattern):
     pattern.make_ticks_abs()
@@ -76,15 +75,7 @@ def _microseconds_per_tick(resolution, mpqn):
     # |resolution| ticks per beat
     return mpqn * 1.0 / resolution
 
-class _MFCCEvent(object):
-    ''' Represents the beginning of a new MFCC window.'''
-    def __init__(self, time):
-        self.time = time
-
-# This yields fewer data points than the MFCC processing, I think because this
-# doesn't take into account terminating silence. Therefore, just discard the
-# leftover MFCC pieces during training.
-def labelsForNoteTrack(pattern, interval=23217, verbose=False):
+def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     # Returns 2d numpy array of shape (88, N). Each slice along dim 2 is a one
     # hot encoding of the notes currently sounding at slice n of the pattern.
     # |interval| is in terms of microseconds, and is invariate to tempo changes.
@@ -109,7 +100,11 @@ def labelsForNoteTrack(pattern, interval=23217, verbose=False):
     tempo_index = 0
     note_index = 0
 
-    while tempo_index < len(tempo_track) or note_index < len(note_track):
+    mfcc_index = 0
+
+    # We can stop when we've analyzed all of the notes, even if we haven't
+    # anaylzed all the tempos.
+    while note_index < len(note_track):
         if tempo_index < len(tempo_track):
             next_tempo_event = tempo_track[tempo_index]
             next_tempo_time = (last_processed_midi_event_time +
@@ -127,8 +122,7 @@ def labelsForNoteTrack(pattern, interval=23217, verbose=False):
             next_note_event = None
             next_note_time = float("inf")
 
-        next_mfcc_event =  _MFCCEvent((current_time - (current_time % interval)) + interval)
-        next_mfcc_time = next_mfcc_event.time
+        next_mfcc_time = mfcc_index * interval
 
         min_time = min(next_tempo_time, next_note_time, next_mfcc_time)
 
@@ -165,10 +159,13 @@ def labelsForNoteTrack(pattern, interval=23217, verbose=False):
             last_processed_midi_event_time = next_note_time
         elif next_mfcc_time == min_time:
             # Process MFCC event
-            answer.append(current_notes[:])
+            if (any(current_notes) or len(answer) > 0):
+                # Ignore "opening silence".
+                answer.append(current_notes[:])
             if verbose:
                _display_one_hot(current_notes)
             current_time = next_mfcc_time
+            mfcc_index += 1
         else:
             print "ERROR: Min time is miscalculated."
     return answer
@@ -183,12 +180,12 @@ def removeTempoEvents(pattern):
     pattern[0] = new_tempo_track
     return pattern
 
-def labelsForPath(path, verbose=False, interval=23217):
+def labelsForPath(path, verbose=False, interval=DEFAULT_INTERVAL):
     pattern = midi.read_midifile(path)
     return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose,
             interval=interval)
 
-def midiFromLabels(labels, interval=23217):
+def midiFromLabels(labels, interval=DEFAULT_INTERVAL):
     """Method to take output of our system and create a MIDI file we can put
     through a synthesizer. |labels| is a list of 1x88 matricies of one hot
     encodings of possible notes. Intervals is the number of microseconds
