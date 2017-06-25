@@ -63,8 +63,8 @@ def get_transcription_model(examples):
 
     with tf.name_scope('fc_layer'):
         num_nodes3 = NUM_FC_NODES
-        # MFCC will be 5 after two pooling layers
-        total_nodes = 5 *  num_filters2
+        current_node_width = pool2.get_shape().as_list()[1]
+        total_nodes = current_node_width *  num_filters2
         weight_vars3 = weight_variables([total_nodes, num_nodes3])
         bias_vars3 = bias_variables([num_nodes3])
 
@@ -77,8 +77,6 @@ def get_transcription_model(examples):
             fc_layer_dropout = tf.nn.dropout(fc_layer, keep_prob)
 
     with tf.name_scope('readout'):
-        # TODO: Do I need to take sigmoid here since I'm not using softmax?
-            # Note that my loss function takes sigmoid
         weight_vars4 = weight_variables([num_nodes3, 88])
         bias_vars4 = bias_variables([88])
 
