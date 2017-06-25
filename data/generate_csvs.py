@@ -2,26 +2,19 @@ import csv
 import os
 import midi_inspect
 import mp3_inspect
-import random 
-
-TRAINING_DATA_CSV = 'training_data/training_data.csv'
-TRAINING_DATA_PATH = 'training_data/raw/'
-TRAINING_LABELS_CSV = 'training_labels/training_labels.csv'
-TRAINING_LABELS_PATH = 'training_labels/raw/'
-VALIDATION_DATA_CSV = 'validation_data/validation_data.csv'
-VALIDATION_LABELS_CSV = 'validation_labels/validation_labels.csv'
+import random
+import constants
 
 def main():
     '''Script to generate data for training and validation.'''
-    for midi_file in os.listdir(TRAINING_DATA_PATH):
+    for midi_file in os.listdir(constants.AUDIO_FILE_PATH):
         if not midi_file.endswith(".mid"):
             continue
         # prints just filenames
         song_name = midi_file.split(".")[0]
         print "Processing " + song_name
-        midi_path = TRAINING_DATA_PATH + midi_file
-        mp3_path = TRAINING_LABELS_PATH +song_name + ".mp3"
-        # Do try statemtn
+        midi_path = constants.AUDIO_FILE_PATH + midi_file
+        mp3_path = constants.MIDI_FILE_PATH +song_name + ".mp3"
         try:
              labels = midi_inspect.labelsForPath(midi_path)
         except:
@@ -45,17 +38,17 @@ def main():
         print "  %d" % len(training)
         print "  %d" % len(labels)
         if random.randrange(20) == 1:
-            with open(VALIDATION_DATA_CSV, "a") as csv_file:
+            with open(constants.VALIDATION_DATA_PATH, "a") as csv_file:
                 vd_writer = csv.writer(csv_file, delimiter=',')
                 vd_writer.writerows(training)
-            with open(VALIDATION_LABELS_CSV, "a") as csv_file:
+            with open(constants.VALIDATION_LABELS_PATH, "a") as csv_file:
                 vl_writer = csv.writer(csv_file, delimiter=',')
                 vl_writer.writerows(labels)
         else:
-            with open(TRAINING_DATA_CSV, "a") as csv_file:
+            with open(constants.TRAINING_DATA_PATH, "a") as csv_file:
                 td_writer = csv.writer(csv_file, delimiter=',')
                 td_writer.writerows(training)
-            with open(TRAINING_LABELS_CSV, "a") as csv_file:
+            with open(constants.TRAINING_LABELS_PATH, "a") as csv_file:
                 tl_writer = csv.writer(csv_file, delimiter=',')
                 tl_writer.writerows(labels)
 
