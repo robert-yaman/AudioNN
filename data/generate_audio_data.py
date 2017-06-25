@@ -4,7 +4,7 @@ import constants
 
 def main():
   """ Creates a set of audio files given a list of midi files. Requires timidity and lame."""
-  for midi_name in os.listdir(TRAINING_DATA_PATH):
+  for midi_name in os.listdir(constants.TRAINING_DATA_PATH),:
     print 'Processing: ' + midi_name
     base_name = os.path.splitext(midi_name)[0]
     mp3_name = base_name + '.mp3'

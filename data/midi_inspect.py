@@ -4,6 +4,11 @@ import os
 import copy
 import argparse
 
+######
+# NOTE: audio files sampled at rate of 22050 by default in librosa. Change that
+# here too?
+#####
+
 # Difference between the MIDI value of a note and the piano value (lowest A is
 # 0).
 MIDI_OFFSET = 21
@@ -178,9 +183,10 @@ def removeTempoEvents(pattern):
     pattern[0] = new_tempo_track
     return pattern
 
-def labelsForPath(path, verbose=False):
+def labelsForPath(path, verbose=False, interval=23217):
     pattern = midi.read_midifile(path)
-    return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose)
+    return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose,
+            interval=interval)
 
 def midiFromLabels(labels, interval=23217):
     """Method to take output of our system and create a MIDI file we can put

@@ -7,10 +7,17 @@ import csv
 def mfccFromTimeSeries(timeSeries, sr):
     return np.rot90(librosa.feature.mfcc(timeSeries, sr=sr))
 
+def stftFromTimeSeries(timeSeries):
+    return np.rot90(librosa.core.stft(timeSeries))
+
 def mfccFromPath(audio_path):
     # Returns np 2darray of shape (20, x). Each MFCC has length .023217s
     times_series, sr = librosa.load(audio_path)
     return mfccFromTimeSeries(times_series, sr)
+
+def stftFromPath(audio_path):
+    time_series, _ = librosa.load(audio_path)
+    return stftFromTimeSeries(time_series)
 
 def isAudio(filename):
     audio_extensions = ['wav','mp3','m4a']
