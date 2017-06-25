@@ -1,10 +1,6 @@
 import random
 import os
-
-TRAINING_DATA_CSV = 'training_data/training_data.csv'
-TRAINING_LABELS_CSV = 'training_labels/training_labels.csv'
-VALIDATION_DATA_CSV = 'validation_data/validation_data.csv'
-VALIDATION_LABELS_CSV = 'validation_labels/validation_labels.csv'
+import constants
 
 TMP_DATA = '/tmp/data_tmp.csv'
 TMP_LABELS = '/tmp/labels_tmp.csv'
@@ -12,10 +8,10 @@ TMP_LABELS = '/tmp/labels_tmp.csv'
 def file_len(f):
     return sum(1 for line in open(f))
 
-def shuffle_data(training_data_csv=TRAINING_DATA_CSV,
-        training_labels_csv=TRAINING_LABELS_CSV,
-        validation_data_csv=VALIDATION_DATA_CSV,
-        validation_labels_csv=VALIDATION_LABELS_CSV):
+def shuffle_data(training_data_csv=constants.TRAINING_DATA_PATH,
+        training_labels_csv=constants.TRAINING_LABELS_PATH,
+        validation_data_csv=constants.VALIDATION_DATA_PATH,
+        validation_labels_csv=constants.VALIDATION_LABELS_PATH):
     '''Use Fisher Yates shuffle to create new tmp files, then replace the old
     files with these ones
     '''
