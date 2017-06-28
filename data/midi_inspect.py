@@ -21,7 +21,7 @@ def noteTrackForPattern(pattern):
     # May also include pedal and metadata tracks, but we'll ignore those for
     # now.
     note_tracks = pattern[1:]
-    final_track = midi.Track()
+    final_track = midi.Track(tick_relative=False)
     meta = midi.TextMetaEvent(tick=0, text='final', data=[49])
     final_track.append(meta)
     while any([len(x) > 0 for x in note_tracks]):
@@ -35,13 +35,15 @@ def noteTrackForPattern(pattern):
         if (type(next_event) == midi.NoteOnEvent or type(next_event) ==
                 midi.NoteOffEvent):
             final_track.append(next_event)
-    final_track.append(midi.EndOfTrackEvent(tick=0, data=[]))
+    final_tick = final_track[-1].tick
+    final_track.append(midi.EndOfTrackEvent(tick=final_tick))
 
     # Preserve metadata on track and tempo track.
     while len(pattern) > 1:
       pattern.pop()
 
     pattern.append(final_track)
+    pattern.make_ticks_rel()
     return pattern
 
 def _string_from_note(note):
@@ -85,6 +87,7 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     #
     # Assumption: the first track of |pattern| contains only tempo changes. The
     # second track of pattern contains only noteOn and noteOff events.
+    pattern.make_ticks_abs()
 
     answer  = []
     time_per_tick = 0
