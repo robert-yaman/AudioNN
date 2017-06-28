@@ -13,6 +13,9 @@ MIDI_OFFSET = 21
 DEFAULT_INTERVAL = 512 / 22050.0 * 1000000
 
 def noteTrackForPattern(pattern):
+    '''Converts a full MIDI file into a file with two tracks - first is tempos
+    and second is notes.
+    '''
     pattern.make_ticks_abs()
 
     # May also include pedal and metadata tracks, but we'll ignore those for
@@ -182,6 +185,7 @@ def removeTempoEvents(pattern):
 
 def labelsForPath(path, verbose=False, interval=DEFAULT_INTERVAL):
     pattern = midi.read_midifile(path)
+    # Why note track?
     return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose,
             interval=interval)
 
