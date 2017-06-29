@@ -23,9 +23,9 @@ def main():
     print 'Processing: ' + midi_name
     base_name = os.path.splitext(midi_name)[0]
     preprocessed_midi_path = _preprocess(midi_name)
-    process(base_name, midi.read_midifile(preprocessed_midi_path))
+    _process(base_name, midi.read_midifile(preprocessed_midi_path))
 
 if __name__ == "__main__":
     #main()
-    midi_name = "chpn_op25_e12.mid"
+    midi_name = "k093.mid"
     preprocessed_midi_path = _preprocess(midi_name)
