@@ -16,6 +16,42 @@ def noteTrackForPattern(pattern):
     '''Converts a full MIDI file into a file with two tracks - first is tempos
     and second is notes.
     '''
+    if len(pattern) > 1:
+        return noteTrackForMultiTrackPattern(pattern)
+    elif len(pattern) == 1:
+        return noteTrackForSingleTrackPattern(pattern)
+    else:
+        print "ERROR: What is this pattern??"
+
+def noteTrackForSingleTrackPattern(pattern):
+    pattern.make_ticks_abs()
+
+    note_track = midi.Track(tick_relative=False)
+    tempo_track = midi.Track(tick_relative=False)
+
+    for event in pattern[0]:
+        if type(event) == midi.NoteOnEvent or type(event) == midi.NoteOffEvent:
+            note_track.append(event)
+        elif type(event) == midi.SetTempoEvent:
+            tempo_track.append(event)
+
+    final_note_tick = note_track[-1].tick
+    note_track.append(midi.EndOfTrackEvent(tick=final_note_tick))
+
+    final_tempo_tick = tempo_track[-1].tick
+    tempo_track.append(midi.EndOfTrackEvent(tick=final_tempo_tick))
+
+    # Keep track metadata.
+    while len(pattern) > 0:
+        pattern.pop()
+
+    pattern.append(tempo_track)
+    pattern.append(note_track)
+
+    pattern.make_ticks_rel()
+    return pattern
+
+def noteTrackForMultiTrackPattern(pattern):
     pattern.make_ticks_abs()
 
     # May also include pedal and metadata tracks, but we'll ignore those for
@@ -244,8 +280,8 @@ def midiFromLabels(labels, interval=DEFAULT_INTERVAL):
     return pattern
 
 if __name__ == "__main__":
-    midi_path = sys.argv[1]
-    pattern = midiFromLabels(labelsForPath(midi_path))
-    print pattern
-    midi.write_midifile("/tmp/test_midi.mid", pattern)
+    #midi_path = sys.argv[1]
+    #pattern = midiFromLabels(labelsForPath(midi_path))
+    #print pattern
+    #midi.write_midifile("/tmp/test_midi.mid", pattern)
     print "Done"

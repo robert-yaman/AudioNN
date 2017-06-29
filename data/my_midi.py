@@ -27,18 +27,19 @@ class MyMidi(object):
             if self._path:
                 self._pattern = midi.read_midifile(self._path)
             elif self._labels:
-                self._pattern = midi_inspect.midiFromLabels(self.labels)
+                self._pattern = midi_inspect.midiFromLabels(self._labels)
         return self._pattern
 
     def note_pattern(self):
         # Representation of the MIDI used for audio conversion. Removes all
         # data except for notes and tempo (e.g. pedal).
         if not self._note_pattern:
-            self._note_pattern = midi_inspect.noteTrackForPattern(self.pattern())
+            self._note_pattern = midi_inspect.noteTrackForPattern(self.pattern()[:])
         return self._note_pattern
 
 
 if __name__ == "__main__":
-    my_midi = MyMidi("training_data/raw/aria.mid")
-    print my_midi.note_pattern()
-    print my_midi.labels()
+    path = "training_data/raw/k093.mid"
+    m = MyMidi(path=path)
+    m.note_pattern()
+    m.pattern()
