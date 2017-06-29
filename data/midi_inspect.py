@@ -5,7 +5,7 @@ import copy
 import argparse
 
 # Difference between the MIDI value of a note and the piano value (lowest A is
-# 0).
+# 0)    
 MIDI_OFFSET = 21
 # 512 is default number of samples in a column of the STFT, 22050 is the
 # default number of samples per second. Multiply by 1000000 to convert to
@@ -36,10 +36,10 @@ def noteTrackForSingleTrackPattern(pattern):
             tempo_track.append(event)
 
     final_note_tick = note_track[-1].tick
-    note_track.append(midi.EndOfTrackEvent(tick=final_note_tick))
-
     final_tempo_tick = tempo_track[-1].tick
-    tempo_track.append(midi.EndOfTrackEvent(tick=final_tempo_tick))
+    final_tick = max(final_note_tick, final_tempo_tick)
+    note_track.append(midi.EndOfTrackEvent(tick=final_tick))
+    tempo_track.append(midi.EndOfTrackEvent(tick=final_tick))
 
     # Keep track metadata.
     while len(pattern) > 0:
@@ -49,6 +49,7 @@ def noteTrackForSingleTrackPattern(pattern):
     pattern.append(note_track)
 
     pattern.make_ticks_rel()
+    pattern.format = 1
     return pattern
 
 def noteTrackForMultiTrackPattern(pattern):
@@ -58,8 +59,6 @@ def noteTrackForMultiTrackPattern(pattern):
     # now.
     note_tracks = pattern[1:]
     final_track = midi.Track(tick_relative=False)
-    meta = midi.TextMetaEvent(tick=0, text='final', data=[49])
-    final_track.append(meta)
     while any([len(x) > 0 for x in note_tracks]):
         track_with_next_event = note_tracks[0]
         next_event_tick = float("inf")
@@ -80,6 +79,7 @@ def noteTrackForMultiTrackPattern(pattern):
 
     pattern.append(final_track)
     pattern.make_ticks_rel()
+    pattern.format = 1
     return pattern
 
 def _string_from_note(note):
@@ -242,7 +242,6 @@ def midiFromLabels(labels, interval=DEFAULT_INTERVAL):
     tempo_event = midi.SetTempoEvent(tick=0, bpm=60)
     tempo_track.append(tempo_event)
     pattern.append(tempo_track)
-    # Don't create a tempo track for now - use all defaults.
     note_track = midi.Track(tick_relative=False)
 
     pattern.append(note_track)
