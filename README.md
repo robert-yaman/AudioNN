@@ -109,4 +109,26 @@ Changes:
 ### Results
 
 [Training Loss](https://www.dropbox.com/s/1s07plcgw5ypjom/Screenshot%202017-06-24%2016.27.45.png?dl=0)
+
 [Test Loss](https://www.dropbox.com/s/08pwmwjamktpmv9/Screenshot%202017-06-24%2016.29.23.png?dl=0)
+
+## 7/01/17
+
+I have higher hopes for this one. I was randomly inspecting some of the data I was using and I realized that my training data was a lot lower quality than I thought. I found a few bugs in the data generation algorithms, and (hilariously) some of my audio files were MIDI of steel drums and harpsichords.
+
+The behavior of my previous models then became clear. Basically, it was impossible to learn anything from the data I was providing. Since the output data is so sparse, the model was basically finding the optimal weights to make as many predictions come out to 0 as possible. This explains why many of the loss curves have a sharp dip in the first couple thousand examples, then a leveling off.
+
+For this batch I cleaned up the data in a number of ways. I fixed all of the bugs I found in the generation scripts, I made sure everything was playing in the right instrument, and I tried to address some of the errors I was seeing in the logs of generate_csvs.py. 
+
+### Parameters
+
+- Validation ratio: 5%
+- Batch Size: 20
+- Learning rate: Adam .0001
+- Filters in first convolutional layer: 24
+- Filters in second convolutional layer: 48
+- Fully connected nodes: 612
+- Dropout in FC layer while training: 50%
+- Stdev of normal distribution initial weights are samples from: .5
+
+### Results
