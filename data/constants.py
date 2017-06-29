@@ -1,5 +1,5 @@
-AUDIO_FILE_PATH = './training_data/raw/'
-MIDI_FILE_PATH = './training_labels/raw/'
+MIDI_FILE_PATH = './training_data/raw/'
+AUDIO_FILE_PATH = './training_labels/raw/'
 
 TRAINING_DATA_PATH = 'training_data/training_data.csv'
 TRAINING_LABELS_PATH = 'training_labels/training_labels.csv'

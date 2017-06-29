@@ -23,29 +23,10 @@ def stftFromPath(audio_path):
     # hard to pick up with librosa.
     return stftFromTimeSeries(trimmed[1540:])
 
-def isAudio(filename):
+def _is_audio(filename):
     audio_extensions = ['wav','mp3','m4a']
     is_audio = False
     for extension in audio_extensions:
         if filename.endswith(extension):
             is_audio = True
     return is_audio
-
-if __name__ == "__main__":
-    # Take all of the audio files in training_labels/raw/, process them and add
-    # them to training_labels/training_labels.csv.
-    # TODO: Need to clip trailing silence so there is the same number of
-    # examples in labels and data. Don't actually have to distinuish between
-    # tracks as long as the index numbers are matched up correctly.
-    raw_data_path = './training_labels/raw/'
-    csv_path = './training_labels/training_labels.csv'
-
-    with open(csv_path, 'wb') as csv_file:
-        writer = csv.writer(csv_file, delimiter=',')
-        for filename in os.listdir(raw_data_path):
-            if isAudio(filename):
-                print 'Processing ' + filename
-                mfcc = mfccFromPath(raw_data_path + filename)
-                writer.writerows(mfcc)
-                # writer.writerow('testing')
-    print 'Created csv at ' + csv_path 
