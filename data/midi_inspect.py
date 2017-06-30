@@ -24,6 +24,8 @@ def noteTrackForPattern(pattern):
         print "ERROR: What is this pattern??"
 
 def noteTrackForSingleTrackPattern(pattern):
+    # We assume that the input pattern has a single track with both note and tempo
+    # information.
     pattern.make_ticks_abs()
 
     note_track = midi.Track(tick_relative=False)
@@ -53,6 +55,8 @@ def noteTrackForSingleTrackPattern(pattern):
     return pattern
 
 def noteTrackForMultiTrackPattern(pattern):
+    # We assume that the first track contains tempo information, and subsequent tracks
+    # contain note information.
     pattern.make_ticks_abs()
 
     # May also include pedal and metadata tracks, but we'll ignore those for
@@ -78,6 +82,7 @@ def noteTrackForMultiTrackPattern(pattern):
       pattern.pop()
 
     pattern.append(final_track)
+
     pattern.make_ticks_rel()
     pattern.format = 1
     return pattern
@@ -132,7 +137,7 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     current_notes = [0] * 88
     # Have to keep track of both time and tick value since MFFCs are in terms
     # of microseconds, and MIDI events are in terms of ticks, and ticks can
-    # change micrsecond value based on tempo change events.
+    # change microsecond value based on tempo change events.
     current_time = 0
     last_tick_processed = 0
     last_processed_midi_event_time = 0
@@ -213,18 +218,8 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     return answer
 
 
-# Note that tempo events do actually affect audio
-def removeTempoEvents(pattern):
-    tempo_track = pattern[0]
-    # Take the initial time signature, the initial tempo, an the end of
-    # track.
-    new_tempo_track = tempo_track[0:2] + [tempo_track[-1]]
-    pattern[0] = new_tempo_track
-    return pattern
-
 def labelsForPath(path, verbose=False, interval=DEFAULT_INTERVAL):
     pattern = midi.read_midifile(path)
-    # Why note track?
     return labelsForNoteTrack(noteTrackForPattern(pattern), verbose=verbose,
             interval=interval)
 
@@ -278,9 +273,3 @@ def midiFromLabels(labels, interval=DEFAULT_INTERVAL):
     pattern.make_ticks_rel()
     return pattern
 
-if __name__ == "__main__":
-    #midi_path = sys.argv[1]
-    #pattern = midiFromLabels(labelsForPath(midi_path))
-    #print pattern
-    #midi.write_midifile("/tmp/test_midi.mid", pattern)
-    print "Done"

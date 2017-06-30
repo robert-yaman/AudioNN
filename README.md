@@ -50,6 +50,8 @@ Therefore, I would not be surprised if the model was very poor at recognizing lo
 
 - Tweak parameters to the model and record difference
 - Add a recurrent aspect to the model
+	- Given that piano notes have a sharp decay after initial impact, it is likely easier to recognize a note at the beginning of its lifecyle than at the end. A recurrent aspect to the model could help mitigate this. It is very likely that two arbitrary adjacent time slices have the same notes. 
+	- A recurrent model could even learn some rules of harmonic progression given a long enough attention.
 - Find better audio features
 
 ### Results
