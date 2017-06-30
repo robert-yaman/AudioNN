@@ -31,12 +31,6 @@ def _validation_labels_path(local):
     return _data_dir(local) + file_name
 
 def _get_file_len(path):
-    """
-    with open(path, 'rb') as f:
-        for i,l in enumerate(f):
-            pass
-    return i
-    """
     # Can't read file len since stored in GS - find another way
     return 2800000
 
@@ -143,6 +137,7 @@ def main(argv=None):
         sess.run(tf.global_variables_initializer())
         sess.run(tf.local_variables_initializer())
         coord = tf.train.Coordinator()
+    
         # Start imperative steps.
         threads = tf.train.start_queue_runners(coord=coord)
         num_epochs = _get_file_len(_training_data_path(local)) / BATCH_SIZE
