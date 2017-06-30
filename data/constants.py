@@ -1,4 +1,5 @@
-MIDI_FILE_PATH = './training_data/raw/'
+RAW_MIDI_FILE_PATH = './training_data/raw/'
+MIDI_FILE_PATH = './training_data/processed/'
 AUDIO_FILE_PATH = './training_labels/raw/'
 
 TRAINING_DATA_PATH = 'training_data/training_data.csv'
