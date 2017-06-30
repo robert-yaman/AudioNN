@@ -114,9 +114,11 @@ Changes:
 
 ## 7/01/17
 
-I have higher hopes for this one. I was randomly inspecting some of the data I was using and I realized that my training data was a lot lower quality than I thought. I found a few bugs in the data generation algorithms, and (hilariously) some of my audio files were MIDI of steel drums and harpsichords.
+I have higher hopes for this one. I changed the input format to raw spectrograms. These contain 50 times more data than an MFCC, so I expect training to be much slower. However, we can now avoid optimizing for human speech.
 
-The behavior of my previous models then became clear. Basically, it was impossible to learn anything from the data I was providing. Since the output data is so sparse, the model was basically finding the optimal weights to make as many predictions come out to 0 as possible. This explains why many of the loss curves have a sharp dip in the first couple thousand examples, then a leveling off.
+Also, I was randomly inspecting some of the data I was using and I realized that my training data was a lot lower quality than I thought. I found a few bugs in the data generation algorithms, and (hilariously) some of my audio files were MIDI of steel drums and harpsichords.
+
+The behavior of my previous models then became clear. Basically, it was impossible to learn anything from the data I was providing. Since the output data is so sparse, the model was basically finding the optimal weights to make as many predictions come out to 0 as possible. This explains why many of the loss curves have a sharp dip in the first couple thousand examples, then level off.
 
 For this batch I cleaned up the data in a number of ways. I fixed all of the bugs I found in the generation scripts, I made sure everything was playing in the right instrument, and I tried to address some of the errors I was seeing in the logs of generate_csvs.py. 
 
