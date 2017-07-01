@@ -1,20 +1,19 @@
 import random
 import os
 import constants
+import csv
+import my_midi
 
 TMP_DATA = '/tmp/data_tmp.csv'
 TMP_LABELS = '/tmp/labels_tmp.csv'
 
-def file_len(f):
+def _nfile_len(f):
     return sum(1 for line in open(f))
 
 def shuffle_data(training_data_csv=constants.TRAINING_DATA_PATH,
         training_labels_csv=constants.TRAINING_LABELS_PATH,
         validation_data_csv=constants.VALIDATION_DATA_PATH,
         validation_labels_csv=constants.VALIDATION_LABELS_PATH):
-    '''Use Fisher Yates shuffle to create new tmp files, then replace the old
-    files with these ones
-    '''
     pairs = [[training_data_csv, training_labels_csv], [validation_data_csv,
         validation_labels_csv]]
     for pair in pairs:
@@ -28,7 +27,7 @@ def shuffle_data(training_data_csv=constants.TRAINING_DATA_PATH,
                         data_lines = data_file.readlines()
                         labels_lines = labels_file.readlines()
 
-                        shuffled_indices = list(range(file_len(data)))
+                        shuffled_indices = list(range(_file_len(data)))
                         random.shuffle(shuffled_indices)
                         for index in shuffled_indices:
                             tmp_data.write(data_lines[index])
@@ -40,5 +39,37 @@ def shuffle_data(training_data_csv=constants.TRAINING_DATA_PATH,
                         os.system("mv %s %s" %(TMP_LABELS, labels))
 
 
+def write_shuffled_lines(lines, data_type, pct_validation=5):
+    '''Takes a list of lines and randomly adds them to the main
+    csvs. pct_validation percent of the data is written to the
+    validation csvs.
+
+    data_types is either 'features' or 'labels'
+    '''
+    if data_type == 'features':
+        training_write_path = constants.TRAINING_DATA_PATH
+        validation_write_path = constants.VALIDATION_DATA_PATH
+    elif data_type == 'labels':
+        training_write_path = constants.TRAINING_LABELS_PATH
+        validation_write_path = constants.VALIDATION_LABELS_PATH
+    else:
+        print "ERROR: uncrecognized data type: %s" % data_type
+        return
+
+    rand_lines = lines[:]
+    random.shuffle(rand_lines) 
+
+    for line in rand_lines:
+        if random.randrange(100 / pct_validation) == 1:
+            with open(validation_write_path, 'a') as csv_file:
+                writer = csv.writer(csv_file, delimiter=',')
+                writer.writerow(line)
+        else:
+            with open(training_write_path, 'a') as csv_file:
+                writer = csv.writer(csv_file, delimiter=',')
+                writer.writerow(line)
+
 if __name__ == "__main__":
-    shuffle_data()
+    path = "training_data/raw/aria.mid"
+    m = my_midi.MyMidi(path)
+    write_shuffled_lines(m.labels(), 'labels')

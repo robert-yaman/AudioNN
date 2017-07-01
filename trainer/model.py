@@ -6,7 +6,6 @@ NUM_FILTERS_SECOND_LAYER = 48
 NUM_FC_NODES = 612
 
 
-# TODO: make number of MFCC units a parameter, since we will likely change
 def _variable_summaries(var):
     """Attach a lot of summaries to a Tensor (for TensorBoard
     visualization)."""

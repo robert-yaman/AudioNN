@@ -1,30 +1,34 @@
+'''Script to generate data for training and validation.'''
+
 import csv
 import os
 import midi_inspect
 import mp3_inspect
 import random
 import constants
+import shuffle_data
 
 def main():
-    '''Script to generate data for training and validation.'''
-    for midi_file in os.listdir(constants.AUDIO_FILE_PATH):
+    for midi_file in os.listdir(constants.MIDI_FILE_PATH):
         if not midi_file.endswith(".mid"):
             continue
-        # prints just filenames
         song_name = midi_file.split(".")[0]
         print "Processing " + song_name
-        midi_path = constants.AUDIO_FILE_PATH + midi_file
-        mp3_path = constants.MIDI_FILE_PATH +song_name + ".mp3"
+        midi_path = constants.MIDI_FILE_PATH + midi_file
+        mp3_file = song_name + ".mp3"
+        mp3_path = constants.AUDIO_FILE_PATH + mp3_file
+
         try:
              labels = midi_inspect.labelsForPath(midi_path)
         except:
             print "<<<<<<<<< ERROR in MIDI: " + song_name
             continue
         try:
-            training = mp3_inspect.mfccFromPath(mp3_path)
+            training = mp3_inspect.stftFromPath(mp3_path)
         except:
             print "<<<<<<< ERROR in MFCCs: " + song_name
             continue
+
         # Make sure there are the same amount of examples. Usually this means
         # trimming off the silence at the end of the audio.
         print "Original:"
@@ -37,20 +41,22 @@ def main():
         print "Final:"
         print "  %d" % len(training)
         print "  %d" % len(labels)
-        if random.randrange(20) == 1:
-            with open(constants.VALIDATION_DATA_PATH, "a") as csv_file:
-                vd_writer = csv.writer(csv_file, delimiter=',')
-                vd_writer.writerows(training)
-            with open(constants.VALIDATION_LABELS_PATH, "a") as csv_file:
-                vl_writer = csv.writer(csv_file, delimiter=',')
-                vl_writer.writerows(labels)
-        else:
-            with open(constants.TRAINING_DATA_PATH, "a") as csv_file:
-                td_writer = csv.writer(csv_file, delimiter=',')
-                td_writer.writerows(training)
-            with open(constants.TRAINING_LABELS_PATH, "a") as csv_file:
-                tl_writer = csv.writer(csv_file, delimiter=',')
-                tl_writer.writerows(labels)
+        
+        # Store per-file csvs. We might use this when we add a recurrent layer.
+        training_csv_path = constants.TRAINING_DATA_DIRECTORY + song_name + '.csv'
+        labels_csv_path = constants.TRAINING_LABELS_DIRECTORY + song_name + '.csv'
+
+        with open(training_csv_path, 'a') as training_csv:
+            training_writer = csv.writer(training_csv, delimiter=',')
+            training_writer.writerows(training)
+
+        with open(labels_csv_path, 'a') as labels_csv:
+            labels_writer = csv.writer(labels_csv, delimiter=',')
+            labels_writer.writerows(labels)
+
+        shuffle_data.write_shuffled_lines(training, 'features')
+        shuffle_data.write_shuffled_lines(labels, 'labels')
+
 
 if __name__ == '__main__':
     main()
