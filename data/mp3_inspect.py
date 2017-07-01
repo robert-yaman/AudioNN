@@ -11,16 +11,16 @@ def stftFromTimeSeries(timeSeries):
     return np.rot90(librosa.core.stft(timeSeries))
 
 def mfccFromPath(audio_path):
-    # Returns np 2darray of shape (20, x).
+    # Mel frequency cepstrum coefficients. Returns np 2darray of shape (20, x).
     times_series, sr = librosa.load(audio_path)
     return mfccFromTimeSeries(times_series, sr)
 
 def stftFromPath(audio_path):
-    # Returns np 2darray of shape (1024, x).
+    # Short-term Fourier transform. Returns np 2darray of shape (1024, x).
     time_series, _ = librosa.load(audio_path)
     trimmed, _ = librosa.effects.trim(time_series)
-    # Timmidity inserts .07s of silence at the beginning of the track that is
-    # hard to pick up with librosa.
+    # timidity inserts .07s of silence at the beginning of the track that is
+    # hard to pick up with librosa, so we manually trim it here.
     return stftFromTimeSeries(trimmed[1540:])
 
 def _is_audio(filename):
