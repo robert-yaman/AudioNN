@@ -1,4 +1,6 @@
-'''Script to generate data for training and validation.'''
+'''Script to generate data for training and validation.
+-r generates csvs for recurrent NN (non-randomized and separated by song).
+'''
 
 import csv
 import os
@@ -7,12 +9,15 @@ import mp3_inspect
 import random
 import constants
 import shuffle_data
+import sys
 
 def main():
     for midi_file in os.listdir(constants.MIDI_FILE_PATH):
         if not midi_file.endswith(".mid"):
             continue
         song_name = midi_file.split(".")[0]
+        if song_name <= "fugue1-2":
+            continue
         print "Processing " + song_name
         midi_path = constants.MIDI_FILE_PATH + midi_file
         mp3_file = song_name + ".mp3"
@@ -41,21 +46,24 @@ def main():
         print "Final:"
         print "  %d" % len(training)
         print "  %d" % len(labels)
-        
-        # Store per-file csvs. We might use this when we add a recurrent layer.
-        training_csv_path = constants.TRAINING_DATA_DIRECTORY + song_name + '.csv'
-        labels_csv_path = constants.TRAINING_LABELS_DIRECTORY + song_name + '.csv'
 
-        with open(training_csv_path, 'a') as training_csv:
-            training_writer = csv.writer(training_csv, delimiter=',')
-            training_writer.writerows(training)
+        if '-r' in sys.argv:
+            # Store per-file csvs. We might use this when we add a recurrent layer.
+            training_csv_path = constants.TRAINING_DATA_DIRECTORY + song_name + '.csv'
+            labels_csv_path = constants.TRAINING_LABELS_DIRECTORY + song_name + '.csv'
 
-        with open(labels_csv_path, 'a') as labels_csv:
-            labels_writer = csv.writer(labels_csv, delimiter=',')
-            labels_writer.writerows(labels)
+            with open(training_csv_path, 'a') as training_csv:
+                training_writer = csv.writer(training_csv, delimiter=',')
+                training_writer.writerows(training)
 
-        shuffle_data.write_shuffled_lines(training, 'features')
-        shuffle_data.write_shuffled_lines(labels, 'labels')
+            with open(labels_csv_path, 'a') as labels_csv:
+                labels_writer = csv.writer(labels_csv, delimiter=',')
+                labels_writer.writerows(labels)
+        else:
+            shuffle_data.write_shuffled_lines(training, 'features')
+            shuffle_data.write_shuffled_lines(labels, 'labels')
+
+
 
 
 if __name__ == '__main__':

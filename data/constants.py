@@ -1,7 +1,7 @@
-TRAINING_DATA_DIRECTORY = './training_data/'
-TRAINING_LABELS_DIRECTORY = './training_labels/'
-VALIDATION_DATA_DIRECTORY = './validation_data/'
-VALIDATION_LABELS_DIRECTORY = './validation_labels/'
+TRAINING_DATA_DIRECTORY = 'training_data/'
+TRAINING_LABELS_DIRECTORY = 'training_labels/'
+VALIDATION_DATA_DIRECTORY = 'validation_data/'
+VALIDATION_LABELS_DIRECTORY = 'validation_labels/'
 
 RAW_MIDI_FILE_PATH = TRAINING_DATA_DIRECTORY + 'raw/'
 MIDI_FILE_PATH = TRAINING_DATA_DIRECTORY + 'processed/'
