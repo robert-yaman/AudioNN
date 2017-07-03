@@ -130,6 +130,10 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     # second track of pattern contains only noteOn and noteOff events.
     pattern.make_ticks_abs()
 
+    # Whether the track contains On/Off pairs, or On/On pairs. As soon as we
+    # detect an Off event, set to False.
+    is_on_only_track = True
+
     answer  = []
     time_per_tick = 0
     # Use a one-hot encoding for currently sounding notes, since this is what
@@ -195,10 +199,12 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
             pitch = next_note_event.get_pitch() - MIDI_OFFSET
             if type(next_note_event) == midi.NoteOnEvent:
                 # Sometimes two NoteOnEvents represent an On/Off pair.
-                current_notes[pitch] = 1 - current_notes[pitch]
+                if current_notes[pitch] == 0:
+                    current_notes[pitch] = 1
+                elif is_on_only_track:
+                    current_notes[pitch] = 0
             elif type(next_note_event) == midi.NoteOffEvent:
-                if not current_notes[pitch]:
-                    print("ERROR: Note already OFF: %d" % pitch)
+                is_on_only_track = False
                 current_notes[pitch] = 0
 
             last_tick_processed = next_note_event.tick
@@ -273,3 +279,6 @@ def midiFromLabels(labels, interval=DEFAULT_INTERVAL):
     pattern.make_ticks_rel()
     return pattern
 
+if __name__ == "__main__":
+    path = "training_data/raw/fugue1-2.mid"
+    print labelsForPath(path)

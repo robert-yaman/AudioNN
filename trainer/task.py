@@ -6,35 +6,36 @@ Possible flags:
 
 import model
 import tensorflow as tf
-
+from data import constants
 from tensorflow.python import debug as tf_debug
 
-BATCH_SIZE = 20
+BATCH_SIZE = 50
 
 def _data_dir(local):
     return 'data/' if local else 'gs://audionn-data/'
 
 def _training_data_path(local):
-    file_name = 'training_data/training_data.csv' if local else 'training_data.csv'
+    file_name = constants.TRAINING_DATA_PATH if local else 'training_data.csv'
     return _data_dir(local) + file_name
 
 def _training_labels_path(local):
-    file_name = 'training_labels/training_labels.csv' if local else 'training_labels.csv'
+    file_name = constants.TRAINING_LABELS_PATH if local else 'training_labels.csv'
     return _data_dir(local) + file_name
 
 def _validation_data_path(local):
-    file_name = 'validation_data/validation_data.csv' if local else 'validation_data.csv'
+    file_name = constants.VALIDATION_DATA_PATH if local else 'validation_data.csv'
     return _data_dir(local) + file_name
 
 def _validation_labels_path(local):
-    file_name = 'validation_labels/validation_labels.csv' if local else 'validation_labels.csv'
+    file_name = constants.VALIDATION_LABELS_PATH if local else 'validation_labels.csv'
     return _data_dir(local) + file_name
 
-def _get_file_len(path):
+def _get_training_length(path):
     # Can't read file len since stored in GS - find another way
     return 2800000
 
 def _get_data(local, validation=False):
+    # Create a constant here that can pull validation data if true
     with tf.name_scope('get_data'):
         data_reader = tf.TextLineReader()
         if validation:
@@ -140,7 +141,7 @@ def main(argv=None):
     
         # Start imperative steps.
         threads = tf.train.start_queue_runners(coord=coord)
-        num_epochs = _get_file_len(_training_data_path(local)) / BATCH_SIZE
+        num_epochs = _get_training_length(_training_data_path(local)) / BATCH_SIZE
         print "BEGINNING TRANING"
         step = 0
         while step < num_epochs and not coord.should_stop():
