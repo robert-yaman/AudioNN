@@ -121,6 +121,14 @@ def _microseconds_per_tick(resolution, mpqn):
     # |resolution| ticks per beat
     return mpqn * 1.0 / resolution
 
+def _is_on_only_track(track):
+    # Return whether the track contains on/off pairs or on/on pairs.
+    return not any([type(event) == midi.NoteOffEvent for event in track])
+
+def _interpretation(currently_on_notes):
+    # currently_on_notes will be an array of ints.
+    return [1 if note > 0 else 0 for note in currently_on_notes]
+
 def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     # Returns 2d numpy array of shape (88, N). Each slice along dim 2 is a one
     # hot encoding of the notes currently sounding at slice n of the pattern.
@@ -129,10 +137,6 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
     # Assumption: the first track of |pattern| contains only tempo changes. The
     # second track of pattern contains only noteOn and noteOff events.
     pattern.make_ticks_abs()
-
-    # Whether the track contains On/Off pairs, or On/On pairs. As soon as we
-    # detect an Off event, set to False.
-    is_on_only_track = True
 
     answer  = []
     time_per_tick = 0
@@ -148,6 +152,7 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
 
     tempo_track = pattern[0]
     note_track = pattern[1]
+    is_on_only_track = _is_on_only_track(note_track)
     tempo_index = 0
     note_index = 0
 
@@ -199,13 +204,16 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
             pitch = next_note_event.get_pitch() - MIDI_OFFSET
             if type(next_note_event) == midi.NoteOnEvent:
                 # Sometimes two NoteOnEvents represent an On/Off pair.
-                if current_notes[pitch] == 0:
-                    current_notes[pitch] = 1
-                elif is_on_only_track:
-                    current_notes[pitch] = 0
+                if is_on_only_track:
+                    current_notes[pitch] = 1 - current_notes[pitch]
+                else:
+                    current_notes[pitch] += 1
             elif type(next_note_event) == midi.NoteOffEvent:
-                is_on_only_track = False
-                current_notes[pitch] = 0
+                if current_notes[pitch] == 0:
+                    print "ERROR: Note can't be off: %d" % pitch
+                else:
+                    current_notes[pitch] -= 1
+
 
             last_tick_processed = next_note_event.tick
             current_time = next_note_time
@@ -214,7 +222,7 @@ def labelsForNoteTrack(pattern, interval=DEFAULT_INTERVAL, verbose=False):
             # Process MFCC event
             if (any(current_notes) or len(answer) > 0):
                 # Ignore "opening silence".
-                answer.append(current_notes[:])
+                answer.append(_interpretation(current_notes[:]))
             if verbose:
                _display_one_hot(current_notes)
             current_time = next_mfcc_time
