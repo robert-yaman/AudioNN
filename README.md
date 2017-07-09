@@ -88,7 +88,7 @@ The [Readout](https://www.dropbox.com/s/4utfbbr7bag79we/Screenshot%202017-06-23%
 
 The test loss starts at about .1, which is very low, and drops only about .03 over the course of training. The initial loss is so low because our input data is very sparse, and the model begins be predicting all notes as 0. 
 
-According to a (N Boulanger-Lewandowski, Y Bengio, P Vincent , 2012)[http://www-etud.iro.umontreal.ca/~boulanni/ICML2012.pdf] paper, initializion strategies can play a big part in overall performance, so maybe a new initialization strategy is needed.
+According to a [N Boulanger-Lewandowski, Y Bengio, P Vincent , 2012](http://www-etud.iro.umontreal.ca/~boulanni/ICML2012.pdf) paper, initializion strategies can play a big part in overall performance, so maybe a new initialization strategy is needed.
 
 ## 6/24/17
 
@@ -120,14 +120,14 @@ I have higher hopes for this one. I changed the input format to raw spectrograms
 
 Also, I was randomly inspecting some of the data I was using and I realized that my training data was a lot lower quality than I thought. I found a few bugs in the data generation algorithms, and (hilariously) some of my audio files were MIDI of steel drums and harpsichords.
 
-The behavior of my previous models then became clear. Basically, it was impossible to learn anything from the data I was providing. Since the output data is so sparse, the model was basically finding the optimal weights to make as many predictions come out to 0 as possible. This explains why many of the loss curves have a sharp dip in the first couple thousand examples, then level off.
+The behavior of my previous models then became clear. It was impossible to learn anything from the data I was providing. Since the output data is so sparse, the model was finding the optimal weights to make as many predictions come out to 0 as possible. This explains why many of the loss curves had a sharp dip in the first couple thousand examples, then leveled off.
 
 For this batch I cleaned up the data in a number of ways. I fixed all of the bugs I found in the generation scripts, I made sure everything was playing in the right instrument, and I tried to address some of the errors I was seeing in the logs of generate_csvs.py. 
 
 ### Parameters
 
 - Validation ratio: 5%
-- Batch Size: 20
+- Batch Size: 50
 - Learning rate: Adam .0001
 - Filters in first convolutional layer: 24
 - Filters in second convolutional layer: 48
