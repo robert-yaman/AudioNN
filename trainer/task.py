@@ -4,54 +4,51 @@ Possible flags:
     - "--local" signifies training is running on local CPU.
 '''
 
+from numpy import genfromtxt
 import model
 import tensorflow as tf
-from data import constants
 from tensorflow.python import debug as tf_debug
+import sys
+import os
+
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+from data import constants
+
 
 BATCH_SIZE = 50
 
 def _data_dir(local):
-    return 'data/' if local else 'gs://audionn-data/'
+    return constants.VOLUME_PATH if local else 'gs://audionn-data/'
 
 def _training_data_path(local):
-    file_name = constants.TRAINING_DATA_PATH if local else 'training_data.csv'
-    return _data_dir(local) + file_name
+    return _data_dir(local) + 'training_data.csv'
 
 def _training_labels_path(local):
-    file_name = constants.TRAINING_LABELS_PATH if local else 'training_labels.csv'
-    return _data_dir(local) + file_name
+    return _data_dir(local) + 'training_labels.csv'
 
 def _validation_data_path(local):
-    file_name = constants.VALIDATION_DATA_PATH if local else 'validation_data.csv'
-    return _data_dir(local) + file_name
+    return _data_dir(local) + 'validation_data.csv'
 
 def _validation_labels_path(local):
-    file_name = constants.VALIDATION_LABELS_PATH if local else 'validation_labels.csv'
-    return _data_dir(local) + file_name
+    return _data_dir(local) + 'validation_labels.csv'
 
 def _get_training_length(path):
     # Can't read file len since stored in GS - find another way
     return 2800000
 
-def _get_data(local, validation=False):
-    # Create a constant here that can pull validation data if true
+def _get_data(validation, local):
     with tf.name_scope('get_data'):
         data_reader = tf.TextLineReader()
-        if validation:
-            feature_file = tf.train.string_input_producer([_validation_data_path(local)])
-        else:
-            feature_file = tf.train.string_input_producer([_training_data_path(local)])
+        data_path_fn = _validation_data_path if validation else _training_data_path
+        feature_file = tf.train.string_input_producer([data_path_fn(local)])
         _, csv_row = data_reader.read(feature_file)
-        record_defaults = [[0.0]] * 20
+        record_defaults = [[0.0]] * 1024
         features = tf.stack(list(tf.decode_csv(csv_row,
             record_defaults=record_defaults)))
 
         label_reader = tf.TextLineReader()
-        if validation:
-            labels_file = tf.train.string_input_producer([_validation_labels_path(local)])
-        else:
-            labels_file = tf.train.string_input_producer([_training_labels_path(local)])
+        label_path_fn = _validation_labels_path if validation else _training_labels_path
+        labels_file = tf.train.string_input_producer([label_path_fn(local)])
         _, csv_row = label_reader.read(labels_file)
         record_defaults = [[0]] * 88
         labels = tf.stack(list(tf.decode_csv(csv_row,
@@ -59,20 +56,28 @@ def _get_data(local, validation=False):
 
         return features, labels
 
-def input_pipeline(local, validation=False):
-    example, label = _get_data(local, validation=validation)
+def input_pipeline(validation, local, batch_size=BATCH_SIZE):
+    example_line, label_line = _get_data(validation, local)
     min_after_dequeue = 10000
-    capacity = min_after_dequeue + 3 * BATCH_SIZE
+    capacity = min_after_dequeue + 3 * batch_size
     example_batch, label_batch = tf.train.shuffle_batch(
-        [example, label], batch_size=BATCH_SIZE, capacity=capacity,
+        [example_line, label_line], batch_size=batch_size, capacity=capacity,
         min_after_dequeue=min_after_dequeue)
     label_batch = tf.cast(label_batch, tf.float32)
     return example_batch, label_batch
 
 def main(argv=None):
     local = "--local" in argv
-    example_batch, label_batch = input_pipeline(local)
-    readout, keep_prob = model.get_transcription_model(example_batch)
+
+    example_batch, label_batch = input_pipeline(False, local)
+    # 5% validation data. Figure out a better way to halt (or re-use?). Try num_epochs=None.
+    v_example, v_label = input_pipeline(True, local, batch_size=BATCH_SIZE * 20)
+    
+    with tf.variable_scope("model") as scope:
+        readout, keep_prob = model.get_transcription_model(example_batch)
+        # Use the same weights and biases for the validation model.
+        scope.reuse_variables()
+        v_readout, v_keep_prob = model.get_transcription_model(v_example)
 
     # Don't use softmax since the outputs aren't mutually exclusive.
     with tf.name_scope('train'):
@@ -95,15 +100,15 @@ def main(argv=None):
     # exactly right. We can revisit this later.
     with tf.name_scope('accuracy'):
         with tf.name_scope('predictions'):
-            sigmoid = tf.sigmoid(readout)
+            sigmoid = tf.sigmoid(v_readout)
             # For each note, did it get the right prediction?
                 # Should be >90% if it just predicts all 0s.
             correct_predictions7 = tf.cast(tf.equal(interpretation(sigmoid,
-                0.7), label_batch), tf.float32)
+                0.7), v_label), tf.float32)
             correct_predictions5 = tf.cast(tf.equal(interpretation(sigmoid,
-                0.5), label_batch), tf.float32)
+                0.5), v_label), tf.float32)
             correct_predictions9 = tf.cast(tf.equal(interpretation(sigmoid,
-                0.9), label_batch), tf.float32)
+                0.9), v_label), tf.float32)
 
             # Did it get the right prediction for every note? Look if the
             # min value is 1.
@@ -128,8 +133,7 @@ def main(argv=None):
     summary = tf.summary.merge_all()
     with tf.Session() as sess:
         tb_path = '/tmp/tensorboard/' if local else 'gs://audionn-data/tensorboard/'
-        train_writer = tf.summary.FileWriter(tb_path + 'train', sess.graph)
-        test_writer = tf.summary.FileWriter(tb_path + 'test', sess.graph)
+        summary_writer = tf.summary.FileWriter(tb_path, sess.graph)
 
         if "--debug" in argv:
             sess = tf_debug.LocalCLIDebugWrapperSession(sess)
@@ -141,21 +145,25 @@ def main(argv=None):
     
         # Start imperative steps.
         threads = tf.train.start_queue_runners(coord=coord)
-        num_epochs = _get_training_length(_training_data_path(local)) / BATCH_SIZE
+        num_steps = _get_training_length(_training_data_path(local)) / BATCH_SIZE
+
         print "BEGINNING TRANING"
         step = 0
-        while step < num_epochs and not coord.should_stop():
+        while step < num_steps and not coord.should_stop():
             step += 1
-            _, summary_val = sess.run([training_step, summary],
-                    feed_dict={keep_prob:0.5})
+            print step
+            sess.run([training_step], feed_dict={keep_prob:0.5})
             if step % 1000 == 0:
-                train_writer.add_summary(summary_val, step)
-                loss_val, summary_val = sess.run([loss, summary], feed_dict={keep_prob:1.0})
-                print('Step: %d    Loss: %f' %(step, loss_val))
-                test_writer.add_summary(summary_val, step)
+                # Do I already get accuracies from the summary?
+                l, s, a5, a7, a9 = sess.run([loss, summary, accuracy5, accuracy7, accuracy9], 
+                    feed_dict={v_keep_prob:1.0})
+                print('Step: %d    Loss: %f\n    Accuracies: %d, %d, %d' % 
+                    (step, l, a5, a7, a9))
+                summary_writer.add_summary(s, step)
         print("DONE TRAINING")
         coord.request_stop()
         coord.join(threads)
 
 if __name__ == '__main__':
-   tf.app.run()
+
+    tf.app.run()

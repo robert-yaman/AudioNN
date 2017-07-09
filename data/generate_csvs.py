@@ -16,8 +16,6 @@ def main():
         if not midi_file.endswith(".mid"):
             continue
         song_name = midi_file.split(".")[0]
-        if song_name <= "fugue1-2":
-            continue
         print "Processing " + song_name
         midi_path = constants.MIDI_FILE_PATH + midi_file
         mp3_file = song_name + ".mp3"
