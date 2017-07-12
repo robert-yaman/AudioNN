@@ -5,7 +5,7 @@ import numpy as np
 import csv
 
 def mfccFromTimeSeries(timeSeries, sr):
-    return np.rot90(librosa.feature.mfcc(timeSersies, sr=sr))
+    return np.rot90(librosa.feature.mfcc(timeSeries, sr=sr))
 
 def stftFromTimeSeries(timeSeries):
     return np.rot90(librosa.core.stft(timeSeries))
@@ -16,7 +16,7 @@ def mfccFromPath(audio_path):
     return mfccFromTimeSeries(times_series, sr)
 
 def stftFromPath(audio_path):
-    # Short-term Fourier transform. Returns np 2darray of shape (1024, x).
+    # Short-term Fourier transform. Returns np 2darray of shape (1025, x).
     time_series, _ = librosa.load(audio_path)
     trimmed, _ = librosa.effects.trim(time_series)
     # timidity inserts .07s of silence at the beginning of the track that is

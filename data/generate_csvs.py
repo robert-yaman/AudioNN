@@ -29,7 +29,7 @@ def main():
         try:
             training = mp3_inspect.stftFromPath(mp3_path)
         except:
-            print "<<<<<<< ERROR in MFCCs: " + song_name
+            print "<<<<<<< ERROR in MP3: " + song_name
             continue
 
         # Make sure there are the same amount of examples. Usually this means

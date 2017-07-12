@@ -4,7 +4,6 @@ Possible flags:
     - "--local" signifies training is running on local CPU.
 '''
 
-from numpy import genfromtxt
 import model
 import tensorflow as tf
 from tensorflow.python import debug as tf_debug
@@ -42,7 +41,7 @@ def _get_data(validation, local):
         data_path_fn = _validation_data_path if validation else _training_data_path
         feature_file = tf.train.string_input_producer([data_path_fn(local)])
         _, csv_row = data_reader.read(feature_file)
-        record_defaults = [[0.0]] * 1024
+        record_defaults = [[0.0]] * constants.AUDIO_FEATURE_COUNT
         features = tf.stack(list(tf.decode_csv(csv_row,
             record_defaults=record_defaults)))
 
@@ -55,6 +54,7 @@ def _get_data(validation, local):
             record_defaults=record_defaults)))
 
         return features, labels
+
 
 def input_pipeline(validation, local, batch_size=BATCH_SIZE):
     example_line, label_line = _get_data(validation, local)
@@ -72,7 +72,7 @@ def main(argv=None):
     example_batch, label_batch = input_pipeline(False, local)
     # 5% validation data. Figure out a better way to halt (or re-use?). Try num_epochs=None.
     v_example, v_label = input_pipeline(True, local, batch_size=BATCH_SIZE * 20)
-    
+
     with tf.variable_scope("model") as scope:
         readout, keep_prob = model.get_transcription_model(example_batch)
         # Use the same weights and biases for the validation model.
@@ -80,7 +80,7 @@ def main(argv=None):
         v_readout, v_keep_prob = model.get_transcription_model(v_example)
 
     # Don't use softmax since the outputs aren't mutually exclusive.
-    with tf.name_scope('train'):
+    # with tf.name_scope('train'):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
                 logits=readout))
         tf.summary.scalar('loss', loss)
@@ -165,5 +165,4 @@ def main(argv=None):
         coord.join(threads)
 
 if __name__ == '__main__':
-
     tf.app.run()
