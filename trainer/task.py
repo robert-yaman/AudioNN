@@ -80,7 +80,7 @@ def main(argv=None):
         v_readout, v_keep_prob = model.get_transcription_model(v_example)
 
     # Don't use softmax since the outputs aren't mutually exclusive.
-    # with tf.name_scope('train'):
+    with tf.name_scope('train'):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
                 logits=readout))
         tf.summary.scalar('loss', loss)
