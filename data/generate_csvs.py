@@ -27,7 +27,7 @@ def main():
             print "<<<<<<<<< ERROR in MIDI: " + song_name
             continue
         try:
-            training = mp3_inspect.stftFromPath(mp3_path)
+            training = mp3_inspect.cqtFromPath(mp3_path)
         except:
             print "<<<<<<< ERROR in MP3: " + song_name
             continue
