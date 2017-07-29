@@ -134,3 +134,23 @@ For this batch I cleaned up the data in a number of ways. I fixed all of the bug
 - Fully connected nodes: 612
 - Dropout in FC layer while training: 50%
 - Stdev of normal distribution initial weights are samples from: .5
+
+## 7/26/17
+
+While attempting to train my previous model, I realized that I made a mistake in my previous plan. The Short Term Fourier Transform I was using output an array of complex numbers - not reals like I was expecting. For a given frequency bucket, the array encoded both the magnitude and the phase of the cycle at that frequency. I realized that I needed a different plan to for my input features.
+
+The first option I considered was using the [WaveNet autoencoder](https://github.com/tensorflow/magenta/tree/master/magenta/models/nsynth) to extract features from raw waveforms. After a test run I realized that the autoencoder was training on monophonic data, and didn't translate well to the polyphonic examples I was using. If you're curious, [here](https://github.com/robert-yaman/AudioNN/blob/master/data/WN/gen_tmpwav.wav) is what the autoencoder thought of a recording of the Bach Goldberg variations.
+
+I also considered simply discarding the phase information in the data. I figured that knowing the magnitude of the signal at each frequency was sufficient to figure out what pitches were playing. I think this would have been a promising approach, but I found a better one in the paper [An End-to-End Neural Network for Polyphonic Piano Music Transcription](https://arxiv.org/pdf/1508.01774.pdf) by Sigtia, Benetos, and Dixon. In this paper, the authors use a constant-Q transform (CQT) to extract features from audio. A CQT is similar to a Fourier Transform, but it uses a log scale over frequency. Instead of a bucket ranging over a constant number of frequencies, it ranges over a constant number of notes (there are more frequencies in between low notes than high notes). This is useful for analyzing music, since notes are a more meaningful classifcation than frequency. Like the authors of the paper, I used a CQT with 256 buckets, and discarded information about that phase of each frequency band.
+
+### Parameters
+
+- Validation ratio: 5%
+- Batch Size: 50
+- Learning rate: Adam .0001
+- Filters in first convolutional layer: 24
+- Filters in second convolutional layer: 48
+- Fully connected nodes: 612
+- Dropout in FC layer while training: 50%
+- Stdev of normal distribution initial weights are samples from: .5
+- Number of CQT buckets: 256

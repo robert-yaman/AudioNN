@@ -83,7 +83,10 @@ def main(argv=None):
     with tf.name_scope('train'):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label_batch,
                 logits=readout))
+        v_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=v_label,
+                logits=v_readout))
         tf.summary.scalar('loss', loss)
+        tf.summary.scalar('v_loss', v_loss)
         training_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
 
     def interpretation(logit, cutoff):
@@ -147,16 +150,15 @@ def main(argv=None):
         threads = tf.train.start_queue_runners(coord=coord)
         num_steps = _get_training_length(_training_data_path(local)) / BATCH_SIZE
 
-        print "BEGINNING TRANING"
+        print "BEGINNING TRANING..."
         step = 0
         while step < num_steps and not coord.should_stop():
             step += 1
             print step
             sess.run([training_step], feed_dict={keep_prob:0.5})
             if step % 1000 == 0:
-                # Do I already get accuracies from the summary?
                 l, s, a5, a7, a9 = sess.run([loss, summary, accuracy5, accuracy7, accuracy9], 
-                    feed_dict={v_keep_prob:1.0})
+                    feed_dict={keep_prob:0.5, v_keep_prob:1.0})
                 print('Step: %d    Loss: %f\n    Accuracies: %d, %d, %d' % 
                     (step, l, a5, a7, a9))
                 summary_writer.add_summary(s, step)

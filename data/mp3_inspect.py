@@ -29,7 +29,7 @@ def stftFromPath(audio_path):
     return stftFromTimeSeries(trimmed[1540:])
 
 def cqtFromPath(audio_path):
-    # Constant-Q Transform.
+    # Constant-Q Transform. Returns np 2darray of shape (NUM_CQT_BINS, x).
     time_series, sr = librosa.load(audio_path)
     trimmed, _ = librosa.effects.trim(time_series)
     # timidity inserts .07s of silence at the beginning of the track that is
