@@ -134,5 +134,3 @@ For this batch I cleaned up the data in a number of ways. I fixed all of the bug
 - Fully connected nodes: 612
 - Dropout in FC layer while training: 50%
 - Stdev of normal distribution initial weights are samples from: .5
-
-### Results

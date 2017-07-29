@@ -1,4 +1,4 @@
-'''Script to generate data for training and validation.
+'''Script to generate data for training and validation. Run from /data/
 -r generates csvs for recurrent NN (non-randomized and separated by song).
 '''
 

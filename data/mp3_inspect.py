@@ -3,6 +3,7 @@ import librosa.display
 import os
 import numpy as np
 import csv
+import constants
 
 def mfccFromTimeSeries(timeSeries, sr):
     return np.rot90(librosa.feature.mfcc(timeSeries, sr=sr))
@@ -12,7 +13,7 @@ def stftFromTimeSeries(timeSeries):
 
 def cqtFromTimeSeries(timeSeries, sr):
     return np.abs(np.rot90(librosa.core.cqt(timeSeries, sr, 
-        bins_per_octave=36, n_bins=256)))
+        bins_per_octave=36, n_bins=constants.NUM_CQT_BINS)))
 
 def mfccFromPath(audio_path):
     # Mel frequency cepstrum coefficients. Returns np 2darray of shape (20, x).
